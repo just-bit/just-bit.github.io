@@ -476,6 +476,11 @@ ul, h1, h2, h3 {
 	background-size: 200px;
 }
 
+.page-footer {
+	background-color: #ccc;
+	border: 1px solid #000;
+}
+
 /*доп. классы*/
 
 .inner-padding {
