@@ -1,4 +1,5 @@
 /*page-header*/
+/*Мои работы*/
 /*page-header - Логотип*/
 /*page-main*/
 /*for descriptions*/
@@ -36,11 +37,35 @@ ul, h1, h2, h3 {
 
 .page-header__inner {
 	display: flex;
-	justify-content: center;
 	max-width: 1120px;
 	min-width: 320px;
 	min-height: 80px;
 	margin: 0 auto;
+}
+
+/*Мои работы*/
+
+.portfolio-list {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.portfolio-item a {
+	margin-left: 20px;
+	font-size: 24px;
+	color: #ccc
+}
+	
+.portfolio-item a:hover {
+	color: #fff
 }
 
 /*page-header - Логотип*/
