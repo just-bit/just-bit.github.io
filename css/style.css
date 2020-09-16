@@ -296,7 +296,7 @@ a {
 	position: static;
 	padding: 3px 0;
 	border: none;
-	text-align-last: left;
+	text-align: left;
 }
 
 .articles .glob-sect__item a:hover {
