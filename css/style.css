@@ -6,6 +6,7 @@ body {
 	margin: 0;
 	font-family: 'Exo 2', "Arial", sans-serif;
 	background-color: #15202B;
+	background-image: url('../img/bg.png');
 }
 
 *, ::before, *::after {
@@ -45,13 +46,90 @@ a {
 	height: 40px;
 }
 
+.title.ind {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+	padding: 20px;
+	font-size: 60px;
+	line-height: 60px;
+}
+
+.title.ind::before,
+.title.ind::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+}
+
+.title.ind::before {
+	top: 0;
+}
+
+.title.ind::after {
+	bottom: 0;
+}
+
 /*header*/
 
 .header {
-	background-color: #01070c;
+	margin-bottom: 30px;
+	box-shadow: 0px 2px 10px 0px #000;
+	background-color: #111;
 }
 
+.header.ind {
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
 
+.nav__list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav__item a {
+	position: relative;
+	display: block;
+	padding: 20px;
+	letter-spacing: 1px;
+	color: orange;
+}
+
+.nav__item a:not([href]) {
+	cursor: default;
+}
+
+.nav__item a[href]::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	color: orange;
+	background-color: orange;
+	cursor: pointer;
+}
+
+.nav__item a[href]:hover::before {
+	height: 5px;
+}
+
+.active {
+	background-color: #15202B;
+}
 /*help*/
 
 .help__wrapper {
@@ -264,6 +342,7 @@ a {
 	border: 1px solid #ffbfff;
 	text-align: center;
 	color: #ffbfff;
+	background-color: #15202B;
 	transition: color 0.3s;
 	overflow: hidden;
 }
@@ -297,6 +376,7 @@ a {
 	padding: 3px 0;
 	border: none;
 	text-align: left;
+	background-color: transparent;
 }
 
 .articles .glob-sect__item a:hover {
@@ -308,6 +388,11 @@ a {
 }
 
 @media (max-width: 650px) {
+	.title.ind {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
 	.help__wrapper {
 		flex-direction: column;
 		justify-content: center;
@@ -338,4 +423,20 @@ a {
 	.reference:hover .reference__sub-list {
 		opacity: 1;
 	}
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	max-width: 100vw;
+	max-height: 100vh;
+	z-index: -1;
+	padding:0;
+	margin:0;
+}
+
+.btnbg {
+	position:fixed;
+	left:0;
+	top:0;
 }
