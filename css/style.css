@@ -89,6 +89,7 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 	margin-top: 10px;
+	background-color: rgba(17, 17, 17, 0.2);
 }
 
 .nav__list {
@@ -99,12 +100,48 @@ a {
 	list-style: none;
 }
 
+.nav__item:last-child {
+	margin-left: auto;
+}
+
+.ind .nav__item:last-child {
+	margin-left: 0;
+}
+
+.nav__item.nav__item--home a {
+	color: #ffff;
+}
+
+.nav__item.nav__item--home a svg {
+	margin-right: 3px;
+	margin-bottom: -3px;
+	fill: #fff;
+}
+
+.nav__item.nav__item--home a:hover,
+.nav__item.nav__item--home a:hover svg {
+	color: #ccc;
+	fill: #ccc;
+}
+
+.nav__item.nav__item--home a:hover::before {
+	display: none;
+}
+
 .nav__item a {
 	position: relative;
 	display: block;
 	padding: 20px;
 	letter-spacing: 1px;
 	color: orange;
+}
+
+.ind .nav__item a {
+	position: relative;
+	display: block;
+	padding: 20px;
+	letter-spacing: 1px;
+	color: white;
 }
 
 .nav__item a:not([href]) {
@@ -121,6 +158,10 @@ a {
 	color: orange;
 	background-color: orange;
 	cursor: pointer;
+}
+
+.ind .nav__item a[href]::before {
+	background-color: #ffffff;
 }
 
 .nav__item a[href]:hover::before {
