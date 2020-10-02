@@ -32,7 +32,6 @@
 		<div class="wrapper">
 			<a href="https://necolas.github.io/normalize.css" target="_blank">normalize.css</a>
 			<a href="https://grid.malven.co" target="_blank">grid</a>
-		<h2 class="font__title">Fonts</h2>
 			<pre><code><span>font-weight:</span> 100 Thin (Hairline)
 	     200 Extra Light (Ultra Light)
 	     300 Light
@@ -64,6 +63,17 @@ body {
 ::-moz-placeholder          {color:#c0392b;}/* Firefox 19+ */
 :-moz-placeholder           {color:#c0392b;}/* Firefox 18- */
 :-ms-input-placeholder      {color:#c0392b;}
+
+-------------------------------------------------------------
+
+:root {
+  <span>--main-bg-color</span>: brown;
+}
+
+.one {
+  color: white;
+  background-color: var(--main-bg-color);
+}
 				</code>
 			</pre>
 		</div>
