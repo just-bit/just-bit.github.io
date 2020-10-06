@@ -439,6 +439,15 @@ a {
 .service {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	box-shadow: 0px 2px 5px 0px #000000;
+}
+
+.service__link span {
+	color: #ffffff
 }
 
 .service__link {
@@ -459,6 +468,31 @@ filter: drop-shadow(0px 4px 3px #000);
 transition: all 0.3s;
 }
 
+.service.drivers .service__link span:hover,
+.service .service__link span:hover {
+	text-decoration: underline;
+}
+
+.service.drivers .service__link:last-child,
+.service.torrents .service__link:last-child {
+	margin-left: auto;
+}
+
+.service.sites > span.service__link {
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.service.sites > span.service__link {
+	margin-left: auto;
+}
+
+.service.drivers .service__link:last-child span,
+.service.torrents .service__link:last-child span,
+.service.sites .service__link:last-child > .service__link span {
+	color: orange;
+}
 
 @media (max-width: 650px) {
 	.title.ind {
@@ -495,5 +529,13 @@ transition: all 0.3s;
 
 	.reference:hover .reference__sub-list {
 		opacity: 1;
+	}
+
+	.help__inner-prompt {
+    margin-top: -15px;
+	}
+
+	.service {
+		justify-content: center;
 	}
 }
