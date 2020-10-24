@@ -538,4 +538,23 @@ transition: all 0.3s;
 	.service {
 		justify-content: center;
 	}
+
+	.service.drivers .service__link:last-child,
+	.service.torrents .service__link:last-child {
+		margin-left: 0;
+	}
+
+	.service.sites span.service__link {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.service.soft .service__link{
+	color: #dabaf3;
+}
+
+.service.soft .service__link:hover{
+	text-decoration: underline;
 }
