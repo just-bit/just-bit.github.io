@@ -76,6 +76,8 @@ body {
   background-color: var(--main-bg-color);
 }
 
+
+
 -------------------------------------------------------------
 
 <span>Паттерн фильтра</span>
@@ -85,5 +87,39 @@ sect.filter>h2.filter__title{Название фильтра}+form.filter__form>
 			</pre>
 		</div>
 	</section>
+
+<section class="my wrapper">
+	<a href="files/formstyler.7z">formstyler</a>
+	<div class="jq-selectbox my">
+
+	  <div class="jq-selectbox__select">
+	    <div class="jq-selectbox__select-text">
+	    	<span>.jq-selectbox__select-text</span>
+	    </div>
+	    <div class="jq-selectbox__trigger">
+	      <div class="jq-selectbox__trigger-arrow">
+	      	<span>.jq-selectbox__trigger-arrow</span>
+	      </div>
+	      <span>.jq-selectbox__trigger</span>
+	    </div>
+	    <span>.jq-selectbox__select</span>
+	  </div>
+
+	  <div class="jq-selectbox__dropdown">
+	    <ul>
+	      <li><span>.jq-selectbox__dropdown > ul > li</span></li>
+	      <li><span>.jq-selectbox__dropdown > ul > li.selected</span></li>
+	      <li><span>.jq-selectbox__dropdown > ul > li.disabled</span></li>
+	      <li><span>.jq-selectbox__dropdown > ul > li</span></li>
+	    </ul>
+	    <span>.jq-selectbox__dropdown</span>
+	  </div>
+	  <span>.my.jq-selectbox (.my.jq-selectbox.focused .jq-selectbox__select)</span>
+	</div>
+</section>
+
+
+
+
 </body>
 </html>
