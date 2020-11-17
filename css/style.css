@@ -563,9 +563,18 @@ transition: all 0.3s;
 
 .my a {
 	display: inline-block;
+	margin-right: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
 	border: 3px solid #ccc;
+	font-size: 24px;
+	color: #ccc;
+}
+
+.my a + span {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding: 10px;
 	font-size: 24px;
 	color: #ccc;
 }
