@@ -1,0 +1,160 @@
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Exo 2", "Arial", sans-serif;
+}
+
+*,
+::before,
+*::after {
+	box-sizing: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	margin: -1px;
+	height: 1px;
+	padding: 0;
+	border: 0;
+	-webkit-clip-path: inset(100%);
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* =================== */
+
+.elements {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-top: 40px;
+}
+
+.elements__item {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.elements__item:last-child {
+	margin-right: 0;
+}
+
+.elements__item a {
+	display: flex;
+	min-height: 92px;
+	align-items: center;
+	padding: 20px;
+	font-size: 24px;
+	line-height: 28px;
+	border-radius: 0;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.elements__item a p {
+	margin: 0;
+	width: 50px;
+	height: 50px;
+}
+
+.elements__item a p img {
+	display: block;
+}
+
+.elements__item a span {
+	margin-left: 10px;
+}
+
+.elements__item a:hover {
+	border-radius: 10px;
+}
+
+/* git */
+
+.elements__item--git a {
+	border-bottom: 1px solid #000000;
+}
+
+.elements__item--git a:hover {
+	background: #000000;
+	color: #ffffff;
+}
+
+.elements__item--git a:hover svg {
+	fill: #ffffff;
+}
+
+/* tippy */
+
+.elements__item--tippy a {
+	color: #7491f7;
+	border-bottom: 1px solid #7491f7;
+}
+
+.elements__item--tippy a:hover {
+	background: #7491f7;
+	color: #ffffff;
+}
+
+/* swiper */
+
+.elements__item--swiper a {
+	color: #6332f6;
+	border-bottom: 1px solid #6332f6;
+}
+
+.elements__item--swiper a:hover {
+	background: #744deb;
+	color: #ffffff;
+}
+
+/* noUiSlider */
+
+.elements__item--nouislider a {
+	border-bottom: 1px solid #2475aa;
+	color: #2475aa;
+}
+
+.elements__item--nouislider a:hover {
+	background-color: #2475aa;
+	color: #ffffff;
+}
+
+.elements__item--nouislider a::before {
+	content: "";
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #2980b9;
+	background-image: url("../img/nouislider.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
