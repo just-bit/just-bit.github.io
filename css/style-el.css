@@ -158,3 +158,55 @@ ul {
 	background-position: center;
 	background-size: contain;
 }
+
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+/* ============================== */
+
+pre span {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.links {
+	display: block;
+	margin-bottom: 10px;
+	color: #0366d6;
+}
+
+.links:hover {
+	text-decoration: underline;
+}
+
+._tabs-block {
+	display: none;
+}
+
+._tabs-block._active {
+	display: block;
+}
+
+.quick__items {
+	display: flex;
+}
+
+.quick__items-item {
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.quick__items-item:hover {
+	color: #514a79;
+}
+
+.quick__items-item {
+	padding: 15px;
+}
+.quick__items-item._active {
+	padding: 15px;
+	background-color: blue;
+	color: #ffff;
+	border-radius: 5px;
+}

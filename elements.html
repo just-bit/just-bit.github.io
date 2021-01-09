@@ -57,8 +57,357 @@
 				</a>
 			</li>
 		</ul>
-	</div>
 
+		<section class="quick _tabs">
+
+			<div class="quick__items select-choices">
+				<p class="quick__items-item _tabs-item _active">Choices</p>
+				<p class="quick__items-item _tabs-item">Tabs</p>
+				<p class="quick__items-item _tabs-item">Spoller</p>
+				<p class="quick__items-item _tabs-item">Swiper</p>
+				<p class="quick__items-item _tabs-item">noUiSlider</p>
+
+			</div>
+
+			<div class="quick__content">
+				<div class="quick__content-item select _tabs-block _active">
+
+					<a class="links" href="files/select-exemple01.7z">Качнуть пример</a>
+					<a class="links" href="files/select-libr.7z">Качнуть библиотеку</a>
+					<div class="select__inner">
+						<pre>
+ <span>HTML</span>
+
+&lt;div&nbsp;class=&quot;sel&quot;&gt;
+  &lt;select&nbsp;class=&quot;selo&quot;&gt;
+    &lt;option&nbsp;value=&quot;people&quot;&gt;People&lt;/option&gt;
+    &lt;option&nbsp;value=&quot;people&quot;&gt;People&nbsp;1&lt;/option&gt;
+    &lt;option&nbsp;value=&quot;people&quot;&gt;People&nbsp;2&lt;/option&gt;
+    &lt;option&nbsp;value=&quot;people&quot;&gt;People&nbsp;3&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+
+<span>JS</span>
+
+const mySelect = () => {
+  const element = document.querySelector('.selo');
+  const choices = new Choices(element, {
+    searchEnabled: false
+  });
+};
+
+mySelect();
+
+<span>CSS</span>
+
+* {
+box-sizing: border-box;
+}
+/* своя оболочка (задаем размеры) */
+.sel {
+margin: 20px auto;
+width: 277px;
+height: 61px;
+border-radius: 5px;
+}
+
+/* верх */
+.sel .choices__inner {
+width: 100%;
+height: 61px;
+border: none;
+border-radius: 5px;
+padding: 21px;
+font-size: 14px;
+line-height: 14px;
+background: #e5e5e5;
+text-align: left;
+color: rgba(51, 51, 51, 0.5);
+}
+
+/* верх - стрелочка (прячем родную) */
+.sel .choices::after {
+display: none;
+}
+
+/* верх - стрелочка (делаем стрелочку) */
+/* верх - стрелочка (покой) */
+.sel .choices::before {
+content: "";
+position: absolute;
+top: calc(50% - 4.5px);
+right: 21px;
+width: 13px;
+height: 9px;
+background-image: url("icon-arrow-down-1.svg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 13px 9px;
+transition: transform 0.3s;
+}
+
+/* верх - стрелочка (актив) */
+.sel .choices.is-open::before {
+transform: rotateZ(-180deg);
+}
+
+/* низ */
+.sel .choices__list--dropdown {
+margin-top: 5px;
+border: none;
+border-radius: 5px;
+background: #e5e5e5;
+}
+
+/* низ - оболочка */
+.sel .choices__list--dropdown .choices__list {
+}
+
+/* низ - оболочка - item */
+.sel .choices__item--choice {
+text-align: left;
+margin: 0;
+padding: 21px;
+}
+
+/* низ - оболочка - item:hover */
+.sel .choices__item--choice.is-highlighted {
+background-color: rgb(204, 167, 167);
+}
+
+/* низ - оболочка - item (показывает выбран) */
+.sel .choices__item--choice.is-selected {
+background-color: #ccc;
+}
+
+/* низ - оболочка - item:hover (на выбранном) */
+.sel .choices__item--choice.is-selected.is-highlighted {
+background-color: #ccc;
+}
+
+					</pre>
+					</div>
+				</div>
+				<div class="quick__content-item tabs _tabs-block">
+					<a class="links" href="files/tabs-exemple.7z">Качнуть пример</a>
+					<pre>
+<span>HTML</span>
+							
+&lt;div&nbsp;class=&quot;my&#45;box&nbsp;_tabs&quot;&gt;
+
+  &lt;div&nbsp;class=&quot;my&#45;tabs&quot;&gt;
+    &lt;div&nbsp;class=&quot;my&#45;tabs__item&nbsp;_tabs&#45;item _active&quot;&gt;1111&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;my&#45;tabs__item&nbsp;_tabs&#45;item&quot;&gt;222&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;my&#45;tabs__item&nbsp;_tabs&#45;item&quot;&gt;333&lt;/div&gt;
+  &lt;/div&gt;
+	
+  &lt;div&nbsp;class=&quot;my&#45;container&quot;&gt;
+    &lt;div&nbsp;class=&quot;my&#45;container__item&nbsp;_tabs&#45;block _active&quot;&gt;aaaaaa&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;my&#45;container__item&nbsp;_tabs&#45;block&quot;&gt;bbbbbb&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;my&#45;container__item&nbsp;_tabs&#45;block&quot;&gt;ccccccc&lt;/div&gt;
+  &lt;/div&gt;
+	
+&lt;/div&gt;
+
+<span>CSS</span>
+
+._tabs-block {
+  display: none;
+}
+
+._tabs-block._active {
+  display: block;
+}
+
+<span>JS</span>
+
+let tabs = document.querySelectorAll("._tabs");
+for (let index = 0; index < tabs.length; index++) { 
+  let tab=tabs[index];
+  let tabs_items=tab.querySelectorAll("._tabs-item");
+  let tabs_blocks=tab.querySelectorAll("._tabs-block");
+  for (let index=0; index < tabs_items.length; index++) {
+    let tabs_item=tabs_items[index]; 
+    tabs_item.addEventListener("click", function (e) {
+      for (let index=0; index < tabs_items.length; index++) {
+        let tabs_item=tabs_items[index];
+	tabs_item.classList.remove('_active'); 
+	tabs_blocks[index].classList.remove('_active'); 
+      }
+	tabs_item.classList.add('_active');
+        tabs_blocks[index].classList.add('_active');
+				e.preventDefault();
+    }); 
+  } 
+}
+				</pre>
+				</div>
+				<div class="quick__content-item spoller _tabs-block">
+					<a class="links" href="files/spoller-exemple.7z">Качнуть пример</a>
+
+					<pre>
+<span>HTML</span>
+<p></p><b>._one</b>  Необходим, если нужен Аккордион</p>
+<p><b>_now-active</b>  Необходим, если нужен открытый спойлер по умолчанию</p>
+
+&lt;div&nbsp;class=&quot;spoller&nbsp;_spollers&nbsp;_one&quot;&gt;
+
+  &lt;div&nbsp;class=&quot;spoller__item&quot;&gt;
+    &lt;div&nbsp;class=&quot;spoller__title&nbsp;_spoller&quot;&gt;Я&nbsp;вопрос&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;spoller__body&quot;&gt;Я&nbsp;ответ&nbsp;Lorem&nbsp;ipsum&lt;/div&gt;
+  &lt;/div&gt;
+	
+  &lt;div&nbsp;class=&quot;spoller__item&quot;&gt;
+    &lt;div&nbsp;class=&quot;spoller__title&nbsp;_spoller&quot;&gt;Я&nbsp;вопрос&lt;/div&gt;
+    &lt;div&nbsp;class=&quot;spoller__body&nbsp;_now&#45;active&quot;&gt;Я&nbsp;ответ&nbsp;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&lt;/div&gt;
+  &lt;/div&gt;
+	
+&lt;/div&gt;
+
+<span>CSS</span>
+
+._spollers ._spoller + div {
+  display: none;
+}
+
+.spoller._spollers ._now-active {
+  display: block;
+}
+
+<span>JS</span>
+
+let spollers = document.querySelectorAll("._spoller");
+let spollersGo = true;
+if (spollers.length > 0) {
+for (let index = 0; index < spollers.length; index++) { const spoller=spollers[index]; spoller.addEventListener("click",
+	function (e) { if (spollersGo) { spollersGo=false; if (spoller.classList.contains('_spoller-992') &&
+	window.innerWidth> 992) {
+	return false;
+	}
+	if (spoller.classList.contains('_spoller-768') && window.innerWidth > 768) {
+	return false;
+	}
+	if (spoller.closest('._spollers').classList.contains('_one')) {
+	let curent_spollers = spoller.closest('._spollers').querySelectorAll('._spoller');
+	for (let i = 0; i < curent_spollers.length; i++) { let el=curent_spollers[i]; if (el !=spoller) {
+		el.classList.remove('_active'); _slideUp(el.nextElementSibling); } } } spoller.classList.toggle('_active');
+		_slideToggle(spoller.nextElementSibling); setTimeout(function () { spollersGo=true; }, 500); } }); } }
+		//=================//SlideToggle let _slideUp=(target, duration=500)=> {
+		target.style.transitionProperty = 'height, margin, padding';
+		target.style.transitionDuration = duration + 'ms';
+		target.style.height = target.offsetHeight + 'px';
+		target.offsetHeight;
+		target.style.overflow = 'hidden';
+		target.style.height = 0;
+		target.style.paddingTop = 0;
+		target.style.paddingBottom = 0;
+		target.style.marginTop = 0;
+		target.style.marginBottom = 0;
+		window.setTimeout(() => {
+		target.style.display = 'none';
+		target.style.removeProperty('height');
+		target.style.removeProperty('padding-top');
+		target.style.removeProperty('padding-bottom');
+		target.style.removeProperty('margin-top');
+		target.style.removeProperty('margin-bottom');
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+		}, duration);
+		}
+		let _slideDown = (target, duration = 500) => {
+		target.style.removeProperty('display');
+		let display = window.getComputedStyle(target).display;
+		if (display === 'none')
+		display = 'block';
+
+		target.style.display = display;
+		let height = target.offsetHeight;
+		target.style.overflow = 'hidden';
+		target.style.height = 0;
+		target.style.paddingTop = 0;
+		target.style.paddingBottom = 0;
+		target.style.marginTop = 0;
+		target.style.marginBottom = 0;
+		target.offsetHeight;
+		target.style.transitionProperty = "height, margin, padding";
+		target.style.transitionDuration = duration + 'ms';
+		target.style.height = height + 'px';
+		target.style.removeProperty('padding-top');
+		target.style.removeProperty('padding-bottom');
+		target.style.removeProperty('margin-top');
+		target.style.removeProperty('margin-bottom');
+		window.setTimeout(() => {
+		target.style.removeProperty('height');
+		target.style.removeProperty('overflow');
+		target.style.removeProperty('transition-duration');
+		target.style.removeProperty('transition-property');
+		target.classList.remove('_slide');
+		}, duration);
+		}
+		let _slideToggle = (target, duration = 500) => {
+		if (!target.classList.contains('_slide')) {
+		target.classList.add('_slide');
+		if (window.getComputedStyle(target).display === 'none') {
+		return _slideDown(target, duration);
+		} else {
+		return _slideUp(target, duration);
+		}
+		}
+		}
+					</pre>
+
+				</div>
+				<div class="quick__content-item swiper _tabs-block">
+					<a class="links" href="files/swiper.7z">Качнуть библиотеку + js-подсказку</a>
+					<pre>
+<span>HTML</span>
+
+&lt;div&nbsp;class=&quot;my-slider swiper&#45;container&quot;&gt;
+
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;wrapper&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;slide&quot;&gt;Slide&nbsp;1&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;slide&quot;&gt;Slide&nbsp;2&lt;/div&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;slide&quot;&gt;Slide&nbsp;3&lt;/div&gt;
+&nbsp;&nbsp;&lt;/div&gt;
+
+&nbsp;&nbsp;&lt;!&#45;&#45;&nbsp;If&nbsp;we&nbsp;need&nbsp;pagination&nbsp;&#45;&#45;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;pagination&quot;&gt;&lt;/div&gt;
+
+&nbsp;&nbsp;&lt;!&#45;&#45;&nbsp;If&nbsp;we&nbsp;need&nbsp;navigation&nbsp;buttons&nbsp;&#45;&#45;&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;button&#45;prev&quot;&gt;&lt;/div&gt;
+&nbsp;&nbsp;&lt;div&nbsp;class=&quot;swiper&#45;button&#45;next&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+<span>JS</span>
+
+let my-slider = new Swiper('.my-slider', {
+// Стрелки
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    // Буллеты
+    type: 'bullets',
+    clickable: true
+  }
+}
+					</pre>
+				</div>
+
+				<div class="quick__content-item swiper _tabs-block">
+					<a class="links" href="files/uislider-exemple.7z">Качнуть (+ два поля для цены)</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="js/spoller.js"></script>
+	<script src="js/tabs.js"></script>
 </body>
 
 </html>
