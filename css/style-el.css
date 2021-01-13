@@ -190,6 +190,7 @@ pre span {
 
 .quick__items {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .quick__items-item {
