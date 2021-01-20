@@ -8,20 +8,130 @@
 	<title>Portfolio</title>
 </head>
 
-<body>
-	<div class="portfolio">
-		<div class="container">
-			<div class="portfolio__inner">
-				<a href="works/mishka/index.html">Mishka</a>
-				<a href="works/drive-moto/index.html">Drive Moto</a>
-				<a href="works/device/index.html">Device</a>
-				<a href="works/spinner-film/index.html">Spinner-film</a>
-			</div>
+<body class="your-element-selector">
+	<div class="wrap">
+		<ul class="portfolio">
 
-		</div>
+			<li class="portfolio__list-item">
+				<div class="card card--mishka">
+					<div class="card__content">
+						<div class="card__front">
+							<h3 class="card__title">Mishka</h3>
+						</div>
+						<div class="card__back">
+							<p class="card__body">
+								<a href="works/mishka/index.html" target="_blank">Главная</a>
+								<a href="works/mishka/catalog.html" target="_blank">Каталог товаров</a>
+								<a href="works/mishka/form.html" target="_blank">Вязание на заказ</a>
+							</p>
+							<a href="https://github.com/just-bit/just-bit.github.io/tree/master/portfolio/works/mishka"
+								target="_blank">View code
+								on github</a>
+						</div>
+					</div>
+				</div>
+			</li>
 
+			<li class="portfolio__list-item">
+
+				<div class="card card--drive-moto">
+					<div class="card__content">
+
+						<div class="card__front">
+							<h3 class="card__title">Drive Moto</h3>
+						</div>
+
+						<div class="card__back">
+							<p class="card__body">
+								<a href="works/drive-moto/index.html" target="_blank">Главная</a>
+								<a href="works/drive-moto/catalog.html" target="_blank">Каталог товаров</a>
+								<a href="works/drive-moto/product-page.html" target="_blank">Страница товара</a>
+
+							</p>
+							<a href="https://github.com/just-bit/just-bit.github.io/tree/master/portfolio/works/drive-moto"
+								target="_blank">View code
+								on github</a>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</li>
+
+			<li class="portfolio__list-item">
+				<div class="card card--technomart">
+					<div class="card__content">
+						<div class="card__front">
+							<h3 class="card__title">Technomart</h3>
+						</div>
+						<div class="card__back">
+							<p class="card__body">
+								<a href="works/device/index.html" target="_blank">Главная</a>
+								<a href="works/device/catalog.html" target="_blank">Каталог товаров</a>
+							</p>
+							<a href="https://github.com/just-bit/just-bit.github.io/tree/master/portfolio/works/device"
+								target="_blank">View code
+								on github</a>
+						</div>
+					</div>
+				</div>
+
+			</li>
+
+
+
+			<li class="portfolio__list-item">
+				<div class="card card--spinner">
+					<div class="card__content">
+
+						<div class="card__front">
+							<h3 class="card__title">Spinner Film</h3>
+						</div>
+
+						<div class="card__back">
+							<p class="card__body">
+								<a href="works/spinner-film/index.html" target="_blank">Главная</a>
+							</p>
+							<a href="https://github.com/just-bit/just-bit.github.io/tree/master/portfolio/works/spinner-film"
+								target="_blank">View
+								code
+								on github</a>
+
+
+						</div>
+
+					</div>
+				</div>
+
+			</li>
+
+		</ul>
 	</div>
 
+	<!-- 
+				<a href="works/spinner-film/index.html">Spinner-film</a> -->
+	</div>
+	<script src="../js/three.min.js"></script>
+	<script src="../js/vanta.waves.min.js"></script>
+	<script>
+		VANTA.WAVES({
+			el: ".your-element-selector",
+			mouseControls: true,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: 100.00,
+			minWidth: 100.00,
+			scale: 1.00,
+			scaleMobile: 1.00,
+			color: 0x184b5c,
+			shininess: 40.00,
+			waveHeight: 3.00,
+			waveSpeed: 0.30,
+			zoom: 1
+		})
+	</script>
 </body>
 
 </html>
