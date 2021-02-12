@@ -66,9 +66,10 @@
 				<p class="quick__items-item _tabs-item">Spoller</p>
 				<p class="quick__items-item _tabs-item">Swiper</p>
 				<p class="quick__items-item _tabs-item">noUiSlider</p>
-				<p class="quick__items-item _tabs-item">Popup</p>
-				<p class="quick__items-item _tabs-item">Button to UP</p>
+				<p class="quick__items-item _tabs-item">Popup !</p>
+				<p class="quick__items-item _tabs-item">Button to UP !</p>
 				<p class="quick__items-item _tabs-item">Button Toggle</p>
+				<p class="quick__items-item _tabs-item">Button Burger !</p>
 				<p class="quick__items-item _tabs-item">Scroll Indicator Line</p>
 				<p class="quick__items-item _tabs-item">Scrollbar</p>
 				<p class="quick__items-item _tabs-item">Quantity</p>
@@ -417,151 +418,8 @@ let my-slider = new Swiper('.my-slider', {
 					<a class="links" href="files/uislider-exemple.7z">Качнуть (+ два поля для цены)</a>
 				</div>
 				<div class="quick__content-item popup _tabs-block">
-					<a class="links" href="files/popup-exemple.7z">Качнуть пример</a>
-					<pre>
+					<a class="links" href="files/popup-example.7z">Качнуть пример</a>
 
-	<span>HTML</span>
-
-	&lt;div&nbsp;class=&quot;popup&nbsp;popup_myclass&quot;&gt;
-	&nbsp;&nbsp;&lt;div&nbsp;class=&quot;popup__content&quot;&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;popup__body&quot;&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;popup__close&quot;&gt;&lt;/div&gt;
-	Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur,&nbsp;adipisicing&nbsp;elit.&nbsp;Architecto,&nbsp;voluptatum.
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-	&nbsp;&nbsp;&lt;/div&gt;
-	&lt;/div&gt;
-
-	<span>CSS</span>
-
-	.popup {
-	-webkit-overflow-scrolling: touch;
-	z-index: 100;
-	padding: 30px 10px;
-	position: fixed;
-	top: 0px;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	}
-	.popup::before {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.9);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	}
-	.popup.show {
-	visibility: visible;
-	overflow: auto;
-	}
-	.popup.show::before {
-	opacity: 1;
-	}
-	.popup.show .popup__body {
-	transform: scale(1);
-	}
-	.popup._active {
-	overflow: auto;
-	visibility: visible;
-	}
-	.popup._active::before {
-	opacity: 1;
-	}
-	.popup._active .popup__body {
-	transition: all 0.3s ease 0.2s;
-	transform: scale(1);
-	}
-	.popup__content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	}
-	.popup__body {
-	transform: scale(0);
-	transition: all 0.3s ease 0s;
-	background-color: #666;
-	padding: 50px;
-	width: 100%;
-	max-width: 800px;
-	}
-	.popup__close {
-	display: block;
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	cursor: pointer;
-	z-index: 30;
-	background: red;
-	}
-
-	<span>JS</span>
-
-	let unlock = true;
-	function body_lock(delay) {
-	let body = document.querySelector("body");
-	if (body.classList.contains('_lock')) {
-	body_lock_remove(delay);
-	} else {
-	body_lock_add(delay);
-	}
-	}
-	function body_lock_remove(delay) {
-	let body = document.querySelector("body");
-	if (unlock) {
-	let lock_padding = document.querySelectorAll("._lp");
-	setTimeout(() => {
-	for (let index = 0; index < lock_padding.length; index++) { const el=lock_padding[index]; el.style.paddingRight='0px' ;
-		} body.style.paddingRight='0px' ; body.classList.remove("_lock"); }, delay); unlock=false; setTimeout(function () {
-		unlock=true; }, delay); } } function body_lock_add(delay) { let body=document.querySelector("body"); if (unlock) { let
-		lock_padding=document.querySelectorAll("._lp"); for (let index=0; index < lock_padding.length; index++) { const
-		el=lock_padding[index]; el.style.paddingRight=window.innerWidth - document.querySelector('.wrapper').offsetWidth
-		+ 'px' ; } body.style.paddingRight=window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px' ;
-		body.classList.add("_lock"); unlock=false; setTimeout(function () { unlock=true; }, delay); } } if (location.hash) {
-		const hsh=location.hash.replace('#', '' ); if (document.querySelector('.popup_' + hsh)) { popup_open(hsh); } else if
-		(document.querySelector('div.' + hsh)) { _goto(document.querySelector('.' + hsh), 500, '' ); } } let
-		popup_link=document.querySelectorAll('._popup-link'); let popups=document.querySelectorAll('.popup'); for (let
-		index=0; index < popup_link.length; index++) { const el=popup_link[index]; el.addEventListener('click', function (e) {
-		if (unlock) { let item=el.getAttribute('href').replace('#', '' ); popup_open(item); } e.preventDefault(); }) } for
-		(let index=0; index < popups.length; index++) { const popup=popups[index]; popup.addEventListener("click", function
-		(e) { if (!e.target.closest('.popup__body')) { popup_close(e.target.closest('.popup')); } }); } function
-		popup_open(item, video='' ) { let activePopup=document.querySelectorAll('.popup._active'); if (activePopup.length> 0)
-		{
-		popup_close('', false);
-		}
-		let curent_popup = document.querySelector('.popup_' + item);
-		if (curent_popup && unlock) {
-		if (!document.querySelector('.menu__body._active')) {
-		body_lock_add(500);
-		}
-		curent_popup.classList.add('_active');
-		history.pushState('', '', '#' + item);
-		}
-		}
-		function popup_close(item, bodyUnlock = true) {
-		if (unlock) {
-		if (!item) {
-		for (let index = 0; index < popups.length; index++) { const popup=popups[index]; popup.classList.remove('_active'); }
-			} else { item.classList.remove('_active'); } if (!document.querySelector('.menu__body._active') && bodyUnlock) {
-			body_lock_remove(500); } history.pushState('', '' , window.location.href.split('#')[0]); } } let
-			popup_close_icon=document.querySelectorAll('.popup__close,._popup-close'); if (popup_close_icon) { for (let index=0;
-			index < popup_close_icon.length; index++) { const el=popup_close_icon[index]; el.addEventListener('click', function
-			() { popup_close(el.closest('.popup')); }) } } document.addEventListener('keydown', function (e) { if
-			(e.code==='Escape' ) { popup_close(); } });
-</pre>
 				</div>
 				<div class="quick__content-item btn-to-up _tabs-block">
 					<a class="links" href="files/button-up-exemple.7z">Качнуть пример</a>
@@ -593,6 +451,14 @@ document.querySelectorAll('.btn').forEach((item) =>
 					</pre>
 
 				</div>
+
+
+				<div class="quick__content-item btn-burger _tabs-block">
+					<a class="links" href="files/burger-example.7z">Качнуть пример burger</a>
+
+				</div>
+
+
 				<div class="quick__content-item scroll-indicator-line _tabs-block">
 					<a class="links" href="files/scroll-indicator-line-exemole.7z">Качнуть пример</a>
 
