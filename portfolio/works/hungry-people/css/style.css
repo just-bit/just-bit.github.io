@@ -2489,7 +2489,7 @@ a[class^="header__main-btn-"] {
 
 .menu-tabs__item:hover,
 .menu-tabs__item:focus {
-  background-color: red;
+  color: #000000;
 }
 
 .menu-tabs__item:last-child {
