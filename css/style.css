@@ -181,6 +181,13 @@ a {
 	margin-left: auto;
 }
 
+@media (max-width: 1170px) {
+	.help__inner:nth-child(2) {
+	margin-left: 0;
+}
+
+}
+
 .help__inner-prompt {
 	align-self: center;
 	margin-right: 50px;
@@ -194,6 +201,7 @@ a {
 
 .help__list {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	margin: 0;
 	padding: 0;
