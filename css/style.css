@@ -183,9 +183,8 @@ a {
 
 @media (max-width: 1170px) {
 	.help__inner:nth-child(2) {
-	margin-left: 0;
-}
-
+		margin-left: 0;
+	}
 }
 
 .help__inner-prompt {
@@ -685,7 +684,7 @@ div.jq-selectbox__select {
 
 .solution__list {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
@@ -695,6 +694,7 @@ div.jq-selectbox__select {
 .solution__item {
 	margin-right: 5px;
 	margin-bottom: 15px;
+	min-width: 20%;
 }
 
 .solution__link {
@@ -969,6 +969,28 @@ div.jq-selectbox__select {
 }
 
 /* ====================== */
+@media (max-width: 619px) {
+	.solution__item {
+		margin-right: 0;
+		margin-bottom: 15px;
+		min-width: auto;
+		width: 100%;
+	}
+
+	.help__inner {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.help__list {
+		justify-content: center;
+	}
+
+	.help__list {
+		margin-bottom: 15px;
+	}
+}
 
 @media (min-width: 620px) {
 	.portfolio {
