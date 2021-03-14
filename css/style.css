@@ -169,6 +169,7 @@ a {
 .help__wrapper {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .help__inner {
@@ -184,6 +185,11 @@ a {
 @media (max-width: 1170px) {
 	.help__inner:nth-child(2) {
 		margin-left: 0;
+		margin-top: 20px;
+	}
+
+	.help__inner {
+		justify-content: center;
 	}
 }
 
