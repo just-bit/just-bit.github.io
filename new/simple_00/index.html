@@ -3,128 +3,50 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>ELEMENTS - Tabs</title>
+		<title>Just-bit - Главная страница</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+<div class="wrapper">
+	<div class="top">
+		<a class="top__logo">just-bit <span>something useful</span></a>
+	</div>
+	<div class="info">
+		<a class="info__link" href="https://gs.statcounter.com/" target="_blank">Statcounter</a>
+		<a class="info__link" href="https://developers.google.com/speed/pagespeed/insights/" target="_blank">PageSpeed Insights</a>
+		<a class="info__link" href="https://caniuse.com/" target="_blank">Can I use</a>
+		<a class="info__link" href="https://validator.w3.org/#validate_by_input" target="_blank">W3C HTML validation</a>
+		<a class="info__link" href="https://jigsaw.w3.org/css-validator/#validate_by_input" target="_blank">W3C CSS validation</a>
 
-<!-- 
-
-	<div class="code">
-		<pre><code>
-
-		</code></pre>
+	</div>
+	<div class="info">
+		<a class="info__link" href="https://html-minifier.com/" class="info__link" target="_blank">html-minifier</a>
+		<a class="info__link" href="https://cssminifier.com/" class="info__link" target="_blank">css-minifier</a>
+		<a class="info__link" href="https://javascript-minifier.com/" class="info__link" target="_blank">javascript-minifier</a>
+			<a class="info__link" href="https://autoprefixer.github.io/" class="info__link" target="_blank">autoprefixer</a>
+			<a class="info__link" href="https://jakearchibald.github.io/svgomg/" class="info__link" target="_blank">svgomg</a>
+			<a class="info__link" href="https://squoosh.app/" class="info__link" target="_blank">squoosh</a>
+				<a class="info__link" href="https://www.photopea.com/" class="info__link" target="_blank">photopea</a>
+	</div>
+	<div class="info">
+		<a class="info__link" href="https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode" class="info__link" target="_blank">Snippet generator</a>
+		<a class="info__link" href="https://ru.w3docs.com/tools/html-encoder/" class="info__link" target="_blank">HTML Encoder/Decoder</a>
 	</div>
 
-	HTML
--------------
--- для классов --
-<span class="class"></span> 
--- для текста --
-<span class="html-text"></span>
--- для class, id ... --
-<span class="html-selector"></span>
--- для всего остального --
-<span class="html-tags"></span>
 
-CSS
-------------
--- для коментов
-<span class="coments"></span>
--- для тегов
-<span class="tag"></span>
--- для скобок
-<span class="brace"></span>
--- для свойств
-<span class="prop"></span>
--- для значений
-<span class="value"></span>
-
--->
-
-<div class="tabs wrapper">
-	<div class="box-top">
-		<h1 class="box-top__title">TABS</h1>
-	<a class="box-top__demo" href="https://codepen.io/just-bit/pen/RwppQzv" target="_blank">DEMO</a>
+<div class="elements">
+	<div class="elements__inner">
+		<a href="">Tabs</a>
+		<a href="">LightGallary</a>
+		<a href="">Spoller</a>
+		<a href="">Tabs</a>
 	</div>
-	<div class="about-code">
-		<div class="about-code__item">
-			<div class="code">
-				<span class="class">_tabs</span>
-			</div>
-			<div class="code">
-				<span class="class">_tabs-item</span>
-			</div>
-			<div class="code">
-				<span class="class">_tabs-block</span>
-			</div>
-			<div class="code">
-				<span class="class">_active</span>
-			</div>
-			<p class="about-code__text"></p>
-		</div>
-	</div>
-
-<div class="code">
-	<pre><code>
-<span class="html-tags">&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs&nbsp;_tabs</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector"><span class="html-selector">class=&quot;</span></span></span><span class="class">tabs__btn-box</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__btn-item _tabs-item&nbsp;_active</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">TAB-1</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__btn-item _tabs-item</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">TAB-2</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__btn-item _tabs-item</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">TAB-3</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__content-box</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__content-item&nbsp;_tabs&#45;block&nbsp;_active</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">Content-1</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__content-item&nbsp;_tabs&#45;block</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">Content-2</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;<span class="html-selector">class=&quot;</span></span><span class="class">tabs__content-item&nbsp;_tabs&#45;block</span><span class="html-tags"><span class="html-selector">&quot;</span>&gt;</span><span class="html-text">Content-3</span><span class="html-tags">&lt;/div&gt;</span>
-<span class="html-tags">&nbsp;&nbsp;&lt;/div&gt;</span>
-<span class="html-tags">&lt;/div&gt;</span>
-	</code></pre>
 </div>
 
-<div class="code">
-	<pre><code><!-- <span class="coments">/* Это комметарий */</span> -->
-<span class="tag">._tabs-block</span> <span class="brace">{</span>
-<span class="prop">&nbsp;&nbsp;display:</span> <span class="value">none</span><span class="prop">;</span>
-<span class="brace">}</span>
-
-<span class="tag">._tabs-block._active</span> <span class="brace">{</span>
-<span class="prop">&nbsp;&nbsp;display:</span> <span class="value">block</span><span class="prop">;</span>
-<span class="brace">}</span>
-	</code></pre>
-</div>
-
-<div class="code">
-	<pre><code>
-function tabs() {
-  let tabs = document.querySelectorAll("._tabs");
-  for (let index = 0; index < tabs.length; index++) {
-    let tab = tabs[index];
-    let tabs_items = tab.querySelectorAll("._tabs-item");
-    let tabs_blocks = tab.querySelectorAll("._tabs-block");
-    for (let index = 0; index < tabs_items.length; index++) {
-      let tabs_item = tabs_items[index];
-      tabs_item.addEventListener("click", function (e) {
-        for (let index = 0; index < tabs_items.length; index++) {
-          let tabs_item = tabs_items[index];
-          tabs_item.classList.remove('_active');
-          tabs_blocks[index].classList.remove('_active');
-        }
-        tabs_item.classList.add('_active');
-        tabs_blocks[index].classList.add('_active');
-        e.preventDefault();
-      });
-    }
-  }
-}
-	</code></pre>
-</div>
 
 </div>
+
+
 		<script src="js/script.js"></script>
 	</body>
 </html>
-
-<script>
-	
-</script>

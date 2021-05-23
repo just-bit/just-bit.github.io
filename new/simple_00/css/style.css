@@ -80,6 +80,76 @@ li {
 	padding: 0 20px;
 }
 
+
+.top {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 50px;
+}
+
+.top__logo {
+	position: relative;
+	display: inline-block;
+	padding: 10px 20px;
+	padding-bottom: 12px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background: red;
+box-shadow: 0px 8px 5px -4px rgba(0, 0, 0, 0.8);
+}
+
+.top__logo span {
+	position: absolute;
+	right: 2px;
+	bottom: 2px;
+	text-align: center;
+	font-size: 5px;
+}
+
+.wrapper .info {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px 0;
+	border-bottom: 1px solid #888F;
+}
+
+.info__link {
+	line-height: 1.4;
+	margin-right: 30px;
+	letter-spacing: 1px;
+}
+
+.info__link:hover {
+	color: #5a81b5;
+}
+
+
+.elements {
+	margin-top: 50px;
+}
+.elements__inner {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.elements__inner a {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	width: 150px;
+	height: 150px;
+	margin-right: 20px;
+	padding: 10px;
+	border-radius: 20px;
+	background: lightblue;
+	color: #161b22;
+}
+
+
+/* ============================ */
+/* ============================ */
+
 .box-top {
 	display: flex;
 	flex-wrap: wrap;
