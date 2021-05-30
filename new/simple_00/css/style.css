@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Orbitron"),
+       url("/fonts/Orbitron-Bold.woff2") format("woff2");
+}
+
 html {
   box-sizing: border-box;
 }
@@ -77,7 +86,13 @@ li {
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 2px;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
 	padding: 0 20px;
+}
 }
 
 
@@ -119,24 +134,28 @@ box-shadow: 0px 8px 5px -4px rgba(0, 0, 0, 0.8);
 	margin: 1px;
 	padding: 20px;
 	letter-spacing: 1px;
-	background: #0043A4;
-}
-
-.info--opti .info__link {
-	background: #002D6D;
-}
-
-.info--self .info__link {
-	background: #052555;
+	background: #cecfee;
+  color: #21213c;
 }
 
 .info__link:hover {
-	background: #10031a;
+	background: #b4b6f0;
 }
 
+.info--opti .info__link {
+	background: #f9d0ca;
+}
 
-.elements {
-	margin-top: 10px;
+.info--opti .info__link:hover {
+	background: #fabcb2;
+}
+
+.info--self .info__link {
+	background: #fcdd9c;
+}
+
+.info--self .info__link:hover{
+	background: #f8d07b;
 }
 
 .elements__inner {
@@ -152,19 +171,17 @@ box-shadow: 0px 8px 5px -4px rgba(0, 0, 0, 0.8);
 	justify-content: center;
 	margin: 1px;
 	padding: 20px 30px;
-	font-family: monospace;
 	font-size: 16px;
-	/* font-weight: bold; */
+	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #d19a66;
-	background: #09080f;
+	letter-spacing: 2px;
+	color: white;
+	background: #214267;
 }
 
 .elements__inner a:hover {
-	color: #09080f;
-	background: #d19a66;
+	background: #0f325a;
 }
 
 
@@ -206,20 +223,22 @@ box-shadow: 0px 8px 5px -4px rgba(0, 0, 0, 0.8);
 .about-code {
 	margin-bottom: 10px;
 }
-
 .about-code__item {
-	display: flex;
-	/* flex-wrap: wrap; */
-	align-items: center;
-}
-
-@media (max-width: 767px) {
-	.about-code__item {
 		display: block;
 	}
 
 	.about-code__item .code {
-		display: inline-block;
+		display: inline-flex;
+	}
+
+@media (min-width: 768px) {
+	.about-code__item {
+	display: flex;
+	align-items: center;
+}
+
+.about-code__item .code {
+		display: auto;
 	}
 	
 }
@@ -289,6 +308,10 @@ box-shadow: 0px 8px 5px -4px rgba(0, 0, 0, 0.8);
 
 .code .class {
 	color: var(--html-color-selector-name);
+}
+
+.code .class.class--nbsp {
+	white-space: nowrap;
 }
 
 .code .html-tags {
