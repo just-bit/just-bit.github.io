@@ -11,11 +11,13 @@
 <body>
 	<div class="tabs wrapper">
 		<div class="top">
-			<a href="../index.html" class="top__logo">just-bit<span>something useful</span></a>
-		</div>
+    <a class="top__link top__link--git" href="https://github.com/just-bit" target="_blank"><svg  width="35" height="35"><use xlink:href="../img/sprite.svg#github"></use></svg></a>
+    <a class="top__logo" href="../index.html"><span>just-bit</span><span>something useful</span></a>
+    <a class="top__link top__link--codepen" href="https://codepen.io/pen" target="_blank"><svg  width="35" height="35"><use xlink:href="../img/sprite.svg#codepen"></use></svg></a>
+  </div>
 		<div class="box-top">
 			<h1 class="box-top__title">POPUP</h1>
-			<a class="box-top__demo" href="--------------" style="background-color: grey;" target="_blank">DEMO</a>
+			<a class="box-top__demo" href="https://codepen.io/just-bit/pen/LYWeKVP" target="_blank">DEMO</a>
 		</div>
 
 		<div class="about-code">
@@ -28,16 +30,16 @@
 		</div>
 <div class="code">
 	<pre><code>
-<span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">wrapper</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
+<span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">wrapper</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
 
-<span class="html-tags">&lt;a</span> <span class="html-selector"">class="</span><span class="class"">popup-link</span><span class="html-selector"">"</span> <span class="html-selector"">href="</span><span class="class"">#popup</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Открыть модальное окно<span class="html-tags">&lt;/a&gt;</span>
+<span class="html-tags">&lt;a</span> <span class="html-selector">class="</span><span class="class">popup-link</span><span class="html-selector">"</span> <span class="html-selector">href="</span><span class="class">#popup</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>Открыть модальное окно<span class="html-tags">&lt;/a&gt;</span>
 
-  <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup</span><span class="html-selector"">"</span> <span class="html-selector"">id="</span><span class="class"">popup</span><span class="html-selector""><span class="html-selector"">"</span></span><span class="html-tags">&gt;</span>
-    <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__body</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
-      <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__content</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
-        <span class="html-tags">&lt;button</span> <span class="html-selector"">class="</span><span class="class"">popup__close close-popup</span><span class="html-selector"">" </span><span class="html-tags">type="button"&gt;</span>Закрыть<span class="html-tags">&lt;/button&gt;</span>
-        <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__title</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Это модальное окно<span class="html-tags">&lt;/div&gt;</span>
-        <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__text</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Тут написано что-то важное<span class="html-tags">&lt;/div&gt;</span>
+  <span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">popup</span><span class="html-selector">"</span> <span class="html-selector">id="</span><span class="class">popup</span><span class="html-selector"><span class="html-selector">"</span></span><span class="html-tags">&gt;</span>
+    <span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">popup__body</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
+      <span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">popup__content</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
+        <span class="html-tags">&lt;button</span> <span class="html-selector">class="</span><span class="class">popup__close close-popup</span><span class="html-selector">" </span><span class="html-tags">type="button"&gt;</span>Закрыть<span class="html-tags">&lt;/button&gt;</span>
+        <span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">popup__title</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>Это модальное окно<span class="html-tags">&lt;/div&gt;</span>
+        <span class="html-tags">&lt;div</span> <span class="html-selector">class="</span><span class="class">popup__text</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>Тут написано что-то важное<span class="html-tags">&lt;/div&gt;</span>
       <span class="html-tags">&lt;/div&gt;</span>
     <span class="html-tags">&lt;/div&gt;</span>
   <span class="html-tags">&lt;/div&gt;</span>
@@ -49,63 +51,65 @@
 
 	<div class="code">
 			<pre><code>
-<span class="class"">body.lock</span> {
-<span class="html-tags">overflow: </span>hidden<span class="html-tags">;</span>
+<span class="class">body.lock</span> {
+<span class="html-tags">overflow: </span><span class="html-selector">hidden</span><span class="html-tags">;</span>
 }
 
-<span class="class"">.wrapper</span> {
-<span class="html-tags">overflow: </span>hidden<span class="html-tags">;</span>
+<span class="class">.wrapper</span> {
+<span class="html-tags">overflow: </span><span class="html-selector">hidden</span><span class="html-tags">;</span>
 }
 
-/* overlay */
-<span class="class"">.popup</span> {
-  <span class="html-tags">position: </span>fixed<span class="html-tags">;</span>
-  <span class="html-tags">top: </span>0<span class="html-tags">;</span>
-  <span class="html-tags">left: </span>0<span class="html-tags">;</span>
-  <span class="html-tags">width: </span>100%<span class="html-tags">;</span>
-  <span class="html-tags">height: </span>100%<span class="html-tags">;</span>
-  <span class="html-tags">background-color: </span>rgba(0, 0, 0, 0.8)<span class="html-tags">;</span>
-  <span class="html-tags">opacity: </span>0<span class="html-tags">;</span>
-  <span class="html-tags">visibility: </span>hidden<span class="html-tags">;</span>
-  <span class="html-tags">overflow-y: </span>auto<span class="html-tags">;</span>
-  <span class="html-tags">overflow-x: </span>hidden<span class="html-tags">;</span>
-  <span class="html-tags">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
+<span class="coments">/* overlay */</span>
+<span class="class">.popup</span> {
+  <span class="html-tags">position: </span><span class="html-selector">fixed</span><span class="html-tags">;</span>
+  <span class="html-tags">top: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">left: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">width: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+  <span class="html-tags">height: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+  <span class="html-tags">background-color: </span><span class="html-selector">rgba(0, 0, 0, 0.8)</span><span class="html-tags">;</span>
+  <span class="html-tags">opacity: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">visibility: </span><span class="html-selector">hidden</span><span class="html-tags">;</span>
+  <span class="html-tags">overflow-y: </span><span class="html-selector">auto</span><span class="html-tags">;</span>
+  <span class="html-tags">overflow-x: </span><span class="html-selector">hidden</span><span class="html-tags">;</span>
+  <span class="html-tags">transition: </span><span class="html-selector">all 0.8s ease 0s</span><span class="html-tags">;</span>
 }
-<span class="class"">.popup.open</span> {
-  <span class="html-tags">opacity: </span>1<span class="html-tags">;</span>
-  <span class="html-tags">visibility: </span>visible<span class="html-tags">;</span>
+<span class="class">.popup.open</span> {
+  <span class="html-tags">opacity: </span><span class="html-selector">1</span><span class="html-tags">;</span>
+  <span class="html-tags">visibility: </span><span class="html-selector">visible</span><span class="html-tags">;</span>
 }
 
-<span class="class"">.popup.open .popup__content</span> {
-  <span class="html-tags">transform: </span>translate(0px, 0%)<span class="html-tags">;</span>
-  <span class="html-tags">opacity: </span>1<span class="html-tags">;</span>
+<span class="class">.popup.open .popup__content</span> {
+  <span class="html-tags">transform: </span><span class="html-selector">translate(0px, 0%)</span><span class="html-tags">;</span>
+  <span class="html-tags">opacity: </span><span class="html-selector">1</span><span class="html-tags">;</span>
 }
-<span class="class"">.popup__body</span> {
-  <span class="html-tags">display: </span>flex<span class="html-tags">;</span>
-  <span class="html-tags">align-items: </span>center<span class="html-tags">;</span>
-  <span class="html-tags">justify-content: </span>center<span class="html-tags">;</span>
-  <span class="html-tags">min-height: </span>100%<span class="html-tags">;</span>
+
+<span class="class">.popup__body</span> {
+  <span class="html-tags">display: </span><span class="html-selector">flex</span><span class="html-tags">;</span>
+  <span class="html-tags">align-items: </span><span class="html-selector">center</span><span class="html-tags">;</span>
+  <span class="html-tags">justify-content: </span><span class="html-selector">center</span><span class="html-tags">;</span>
+  <span class="html-tags">min-height: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
   <span class="coments">/* 0.8s связан с js timeout = 800. должны быть одинаковы*/</span>
-  <span class="html-tags">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
-}
-/* тело попапа */
-<span class="class"">.popup__content</span> {
-  <span class="html-tags"">position: </span>relative<span class="html-tags">;</span>
-  <span class="html-tags"">max-width: </span>800px<span class="html-tags">;</span>
-  <span class="html-tags"">margin: </span>10px<span class="html-tags">;</span>
-  <span class="html-tags"">padding: </span>10px<span class="html-tags">;</span>
-  <span class="html-tags"">opacity: </span>0<span class="html-tags">;</span>
-  <span class="html-tags"">transform: </span>translate(0px, -50%)<span class="html-tags">;</span>
-  <span class="html-tags"">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
-  <span class="html-tags"">background-color: </span>blue<span class="html-tags">;</span>
+  <span class="html-tags">transition: </span><span class="html-selector">all 0.8s ease 0s</span><span class="html-tags">;</span>
 }
 
-<span class="class"">.popup__close</span> {
-  <span class="html-tags">position: </span>absolute<span class="html-tags">;</span>
-  <span class="html-tags">right: </span>10px<span class="html-tags">;</span>
-  <span class="html-tags">top: </span>10px<span class="html-tags">;</span>
-  <span class="html-tags">background: </span>red<span class="html-tags">;</span>
-<span class="html-tags">;</span>
+<span class="coments">/* тело попапа */</span>
+<span class="class">.popup__content</span> {
+  <span class="html-tags">position: </span><span class="html-selector">relative</span><span class="html-tags">;</span>
+  <span class="html-tags">max-width: </span><span class="html-selector">800px</span><span class="html-tags">;</span>
+  <span class="html-tags">margin: </span><span class="html-selector">10px</span><span class="html-tags">;</span>
+  <span class="html-tags">padding: </span><span class="html-selector">10px</span><span class="html-tags">;</span>
+  <span class="html-tags">opacity: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">transform: </span><span class="html-selector">translate(0px, -50%)</span><span class="html-tags">;</span>
+  <span class="html-tags">transition: </span><span class="html-selector">all 0.8s ease 0s</span><span class="html-tags">;</span>
+  <span class="html-tags">background-color: </span><span class="html-selector">blue</span><span class="html-tags">;</span>
+}
+
+<span class="class">.popup__close</span> {
+  <span class="html-tags">position: </span><span class="html-selector">absolute</span><span class="html-tags">;</span>
+  <span class="html-tags">right: </span><span class="html-selector">10px</span><span class="html-tags">;</span>
+  <span class="html-tags">top: </span><span class="html-selector">10px</span><span class="html-tags">;</span>
+  <span class="html-tags">background: </span><span class="html-selector">red</span><span class="html-tags">;</span>
+}
 	</code></pre>
 		</div>
 		<div class="code">
