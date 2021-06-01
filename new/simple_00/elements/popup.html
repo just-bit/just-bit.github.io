@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Just-bit - Popup</title>
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<div class="tabs wrapper">
+		<div class="top">
+			<a href="../index.html" class="top__logo">just-bit<span>something useful</span></a>
+		</div>
+		<div class="box-top">
+			<h1 class="box-top__title">POPUP</h1>
+			<a class="box-top__demo" href="--------------" style="background-color: grey;" target="_blank">DEMO</a>
+		</div>
+
+		<div class="about-code">
+				<div class="about-code__item">
+					<p class="about-code__text">
+						Модальных окон может быть множество. Привязка происходит по якарям.<br>
+						.wrapper делаем всей странице, он нужен для поведения скроллбара.
+					</p>
+			</div>
+		</div>
+<div class="code">
+	<pre><code>
+<span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">wrapper</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
+
+<span class="html-tags">&lt;a</span> <span class="html-selector"">class="</span><span class="class"">popup-link</span><span class="html-selector"">"</span> <span class="html-selector"">href="</span><span class="class"">#popup</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Открыть модальное окно<span class="html-tags">&lt;/a&gt;</span>
+
+  <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup</span><span class="html-selector"">"</span> <span class="html-selector"">id="</span><span class="class"">popup</span><span class="html-selector""><span class="html-selector"">"</span></span><span class="html-tags">&gt;</span>
+    <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__body</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
+      <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__content</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>
+        <span class="html-tags">&lt;button</span> <span class="html-selector"">class="</span><span class="class"">popup__close close-popup</span><span class="html-selector"">" </span><span class="html-tags">type="button"&gt;</span>Закрыть<span class="html-tags">&lt;/button&gt;</span>
+        <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__title</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Это модальное окно<span class="html-tags">&lt;/div&gt;</span>
+        <span class="html-tags">&lt;div</span> <span class="html-selector"">class="</span><span class="class"">popup__text</span><span class="html-selector"">"</span><span class="html-tags">&gt;</span>Тут написано что-то важное<span class="html-tags">&lt;/div&gt;</span>
+      <span class="html-tags">&lt;/div&gt;</span>
+    <span class="html-tags">&lt;/div&gt;</span>
+  <span class="html-tags">&lt;/div&gt;</span>
+<span class="html-tags">&lt;/div&gt;</span>
+	</code></pre>
+</div>
+	
+
+
+	<div class="code">
+			<pre><code>
+<span class="class"">body.lock</span> {
+<span class="html-tags">overflow: </span>hidden<span class="html-tags">;</span>
+}
+
+<span class="class"">.wrapper</span> {
+<span class="html-tags">overflow: </span>hidden<span class="html-tags">;</span>
+}
+
+/* overlay */
+<span class="class"">.popup</span> {
+  <span class="html-tags">position: </span>fixed<span class="html-tags">;</span>
+  <span class="html-tags">top: </span>0<span class="html-tags">;</span>
+  <span class="html-tags">left: </span>0<span class="html-tags">;</span>
+  <span class="html-tags">width: </span>100%<span class="html-tags">;</span>
+  <span class="html-tags">height: </span>100%<span class="html-tags">;</span>
+  <span class="html-tags">background-color: </span>rgba(0, 0, 0, 0.8)<span class="html-tags">;</span>
+  <span class="html-tags">opacity: </span>0<span class="html-tags">;</span>
+  <span class="html-tags">visibility: </span>hidden<span class="html-tags">;</span>
+  <span class="html-tags">overflow-y: </span>auto<span class="html-tags">;</span>
+  <span class="html-tags">overflow-x: </span>hidden<span class="html-tags">;</span>
+  <span class="html-tags">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
+}
+<span class="class"">.popup.open</span> {
+  <span class="html-tags">opacity: </span>1<span class="html-tags">;</span>
+  <span class="html-tags">visibility: </span>visible<span class="html-tags">;</span>
+}
+
+<span class="class"">.popup.open .popup__content</span> {
+  <span class="html-tags">transform: </span>translate(0px, 0%)<span class="html-tags">;</span>
+  <span class="html-tags">opacity: </span>1<span class="html-tags">;</span>
+}
+<span class="class"">.popup__body</span> {
+  <span class="html-tags">display: </span>flex<span class="html-tags">;</span>
+  <span class="html-tags">align-items: </span>center<span class="html-tags">;</span>
+  <span class="html-tags">justify-content: </span>center<span class="html-tags">;</span>
+  <span class="html-tags">min-height: </span>100%<span class="html-tags">;</span>
+  <span class="coments">/* 0.8s связан с js timeout = 800. должны быть одинаковы*/</span>
+  <span class="html-tags">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
+}
+/* тело попапа */
+<span class="class"">.popup__content</span> {
+  <span class="html-tags"">position: </span>relative<span class="html-tags">;</span>
+  <span class="html-tags"">max-width: </span>800px<span class="html-tags">;</span>
+  <span class="html-tags"">margin: </span>10px<span class="html-tags">;</span>
+  <span class="html-tags"">padding: </span>10px<span class="html-tags">;</span>
+  <span class="html-tags"">opacity: </span>0<span class="html-tags">;</span>
+  <span class="html-tags"">transform: </span>translate(0px, -50%)<span class="html-tags">;</span>
+  <span class="html-tags"">transition: </span>all 0.8s ease 0s<span class="html-tags">;</span>
+  <span class="html-tags"">background-color: </span>blue<span class="html-tags">;</span>
+}
+
+<span class="class"">.popup__close</span> {
+  <span class="html-tags">position: </span>absolute<span class="html-tags">;</span>
+  <span class="html-tags">right: </span>10px<span class="html-tags">;</span>
+  <span class="html-tags">top: </span>10px<span class="html-tags">;</span>
+  <span class="html-tags">background: </span>red<span class="html-tags">;</span>
+<span class="html-tags">;</span>
+	</code></pre>
+		</div>
+		<div class="code">
+			<pre><code>
+  popup();
+
+  function popup() {
+    const popupLinks = document.querySelectorAll('.popup-link');
+    const body = document.querySelector('body');
+    const lockPadding = document.querySelectorAll(".lock-padding");  
+    let unlock = true;  
+    const timeout = 800;  
+    if (popupLinks.length > 0) {
+      for (let index = 0; index < popupLinks.length; index++) {
+        const popupLink = popupLinks[index];
+        popupLink.addEventListener("click", function (e) {
+          const popupName = popupLink.getAttribute('href').replace('#', '');
+          const curentPopup = document.getElementById(popupName);
+          popupOpen(curentPopup);
+          e.preventDefault();
+        });
+      }
+    }
+    const popupCloseIcon = document.querySelectorAll('.close-popup');
+    if (popupCloseIcon.length > 0) {
+      for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function (e) {
+          popupClose(el.closest('.popup'));
+          e.preventDefault();
+        });
+      }
+    }  
+    function popupOpen(curentPopup) {
+      if (curentPopup && unlock) {
+      	const popupActive = document.querySelector('.popup.open');
+      	if (popupActive) {
+      	  popupClose(popupActive, false);
+      	} else {
+      	  bodyLock();
+      	}
+      	curentPopup.classList.add('open');
+      	curentPopup.addEventListener("click", function (e) {
+          if (!e.target.closest('.popup__content')) {
+      	    popupClose(e.target.closest('.popup'));
+          }
+        });
+      }
+    }  
+    function popupClose(popupActive, doUnlock = true) {
+  	  if (unlock) {
+  	    popupActive.classList.remove('open');
+  	    if (doUnlock) {
+  	      bodyUnLock();
+  	    }
+  	  }
+  	}  
+    function bodyLock() {
+      const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';  
+      if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+          const el = lockPadding[index];
+          el.style.paddingRight = lockPaddingValue;
+        }
+      }
+      body.style.paddingRight = lockPaddingValue;
+      body.classList.add('lock');  
+      unlock = false;
+      setTimeout(function () {
+        unlock = true;
+      }, timeout);
+    }  
+    function bodyUnLock() {
+      setTimeout(function () {
+        if (lockPadding.length > 0) {
+          for (let index = 0; index < lockPadding.length; index++) {
+        	  const el = lockPadding[index];
+        	  el.style.paddingRight = '0px';
+        	}
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+      }, timeout);  
+      unlock = false;
+      setTimeout(function () {
+      	unlock = true;
+      }, timeout);
+    }  
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 27) {
+        const popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
+      }
+    });
+  }
+	</code></pre>
+		</div>
+	
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
+
+
