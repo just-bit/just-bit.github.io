@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Orbitron";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Orbitron"),
-       url("/fonts/Orbitron-Bold.woff2") format("woff2");
-}
-
 html {
   box-sizing: border-box;
 }
@@ -14,7 +5,7 @@ html {
 body {
   margin: 0;
 	padding: 0;
-	font-family: "Arial", sans-serif;
+	font-family: "Exo 2", "Arial", sans-serif;
 	color: #eee8e8;
 	background: #161b22;
 	
@@ -147,31 +138,16 @@ fill: #161B22;
 	text-align: center;
 	line-height: 1.4;
 	margin: 1px;
-	padding: 20px;
+	padding: 15px 20px;
 	letter-spacing: 1px;
-	background: #cecfee;
+	background: #D8DADC;
   color: #21213c;
 }
 
 .info__link:hover {
-	background: #b4b6f0;
+	background: #bad5f0;
 }
 
-.info--opti .info__link {
-	background: #f9d0ca;
-}
-
-.info--opti .info__link:hover {
-	background: #fabcb2;
-}
-
-.info--self .info__link {
-	background: #fcdd9c;
-}
-
-.info--self .info__link:hover{
-	background: #f8d07b;
-}
 
 .elements {
 	margin-top: 8px;
@@ -190,18 +166,19 @@ fill: #161B22;
 	align-items: center;
 	justify-content: center;
 	margin: 1px;
-	padding: 20px 30px;
+	padding: 15px 20px;
 	font-size: 16px;
 	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: white;
-	background: #214267;
+	letter-spacing: 1px;
+	color: 	#181A1C;
+	background: #D8DADC;
 }
 
 .elements__inner a:hover {
-	background: #0f325a;
+	background: #4e7eb4;
+	color: #ffffff;
 }
 
 
