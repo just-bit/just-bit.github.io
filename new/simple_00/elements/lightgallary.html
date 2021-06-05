@@ -41,7 +41,7 @@
 <span class="html-tags">&lt;script </span><span class="html-selector">src="</span><span class="class">lg-video.min.js</span><span class="html-selector">"</span><span class="html-tags">&gt;&lt;/script&gt;</span>
 
 
-<span class="html-tags">&lt;div </span><span class="html-selector">class="</span><span class="class">my-lightgallery</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
+<span class="html-tags">&lt;div </span><span class="html-selector">class="</span><span class="class">lightgallery</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
   <span class="html-tags">&lt;a </span><span class="html-selector">href="</span><span class="class">img/img1.jpg</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
     <span class="html-tags">&lt;img </span><span class="html-selector">src="</span><span class="class">img/thumb1.jpg</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
   <span class="html-tags">&lt;/a&gt;</span>
@@ -56,9 +56,16 @@
 		</div>
 		<div class="code">
 			<pre><code>
-lightGallery(document.querySelector('.my-lightgallery'), {
-  <span class="coments">// options ...</span>
-});
+lightGallery();
+
+function lightGallery() {
+  document.querySelectorAll('.lightgallery').forEach(
+    function(i) {
+      const choices = new lightGallery(i, {
+<span class="coments">// options ...</span>
+    });
+  });
+};
 	</code></pre>
 		</div>
 	</div>
