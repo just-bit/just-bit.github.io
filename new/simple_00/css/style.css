@@ -218,6 +218,10 @@ background: #cde0f3;
 		display: block;
 	}
 
+	.about-code .code {
+		overflow: visible;
+	}
+
 	.about-code__item .code {
 		display: inline-flex;
 	}
@@ -266,6 +270,7 @@ background: #cde0f3;
 	font-size: 14px;
 	line-height: 1.5;
 	background: #0d1117;
+	overflow: auto;
 }
 
 @media (min-width: 768px) {
