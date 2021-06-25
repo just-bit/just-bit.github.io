@@ -100,6 +100,78 @@ scrollbar: {
   draggable: true
 },
 
+<span class="coments">// Свободный режим (скролл без фиксированной позиции, Управление колесом мыши - интересно работает)</span>
+freeMode: true,
+
+<span class="coments">// Бесконечный слайдер</span>
+<span class="coments">// Не работает с мультирядностью</span>
+<span class="coments">// если slidesPerView: 'auto', </span>
+<span class="coments">// добавляем вручную количество дублирующих слайдов (loopedSlides)</span>
+loop: true,
+
+<span class="coments">// Кол-во дублирующих слайдов</span>
+loopedSlides: 0,
+
+<span class="coments">// Автопрокрутка  ==></span>
+autoplay: {
+<span class="coments">// - Пауза между прокруткой</span>
+delay: 1000,
+<span class="coments">// - Закончить на последнем слайде (если выключена бесконечность)</span>
+stopOnLastSlide: true,
+<span class="coments">// - Отключить после ручного переключения (false - прокрутка возобравляется)</span>
+disableOnInteraction: false
+},
+
+<span class="coments">// Скорость</span>
+speed: 800,
+
+<span class="coments">// Вертикальный слайдер (по ум. 'horizontal')</span>
+<span class="coments">// .my-slider {height: 400px;}</span>
+<span class="coments">// помним: свободный режим и возможность управления колесом мыши</span>
+direction: 'vertical', 
+
+<span class="coments">//=================================
+//=================================\/</span>
+
+<span class="coments">// Эффекты переключения слайдов (выбрать один) ==></span>
+<span class="coments">// - Листание (по ум.)</span>
+effect: 'slide',
+<span class="coments">// - Cмена прозрачности (лучше подходит, если показывать один слайд за раз)</span>
+effect: 'fade',
+fadeEffect: {
+  crossFade: true
+},
+<span class="coments">// - Переворот (лучше подходит, если показывать один слайд за раз)</span>
+effect: 'flip',
+flipEffect: {
+  <span class="coments">// -- Тень</span>
+  slideShadows: true,
+  <span class="coments">// -- Показ только активного слайда</span>
+  limitRotation: true
+},
+<span class="coments">// - 3D-Куб (ограничиваем ширину слайдера)</span>
+effect: 'cube',
+cubeEffect: {
+  <span class="coments">// -- Настройки тени</span>
+  slideShadows: true,
+  shadow: true,
+  shadowOffset: 20,
+  shadowScale: 0.94
+},
+<span class="coments">// - Эффект потока (чтоб красивше: slidesPerView: 3)</span>
+effect: 'coverflow',
+coverflowEffect: {
+  <span class="coments">// -- Угол</span>
+  rotate: 20,
+  <span class="coments">// -- Наложение</span>
+  stretch: 50,
+  <span class="coments">// -- Тень</span>
+  slideShadows: true,
+},
+
+<span class="coments">//=================================^
+//=================================</span>
+
 <span class="coments">// Отступ между слайдами</span>
 spaceBetween: 30,
 
@@ -117,8 +189,15 @@ initialSlide: 0,
 
 <span class="coments">// Количество слайдов для показа (можно 'auto', 3.5, 3.6 ...)</span>
 <span class="coments">// если slidesPerView: 'auto' ==> .swiper-slide {width: auto;}</span>
+<span class="coments">// не работает, если больше чем один ряд</span>
 slidesPerView: 3,
-	
+
+<span class="coments">// Мультирядность</span>
+<span class="coments">// autoHeight: false</span>
+<span class="coments">// .my-slider {height: 400px;}</span>
+<span class="coments">// .swiper-slide {height: calc((100% - 20px) / 2)}</span>
+slidesPerColumn: 2,
+
 <span class="coments">// Отключение функционала</span>
 <span class="coments">// если слайдов меньше чем нужно (slidesPerView)</span>
 watchOverflow: true,
@@ -159,7 +238,7 @@ pageUpDown: true,
 mousewheel: {
   <span class="coments">// - Чувствительность колеса мыши</span>
   sensitivity: 1,
-  <span class="coments">// - Класс объекта на котором, будет срабатывать прокрутка мышью.</span>
+  <span class="coments">// - Класс объекта на котором, будет срабатывать прокрутка мышью</span>
   <span class="coments">// - Если слайдеров несколько eventsTarget можно не писать</span>
   eventsTarget: '.my-slider'
 },
