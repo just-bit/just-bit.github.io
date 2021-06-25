@@ -91,15 +91,19 @@ li {
 .top {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	min-height: 50px;
 	margin-top: 13px;
 	margin-bottom: 13px;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding-right: 25px;
+	padding-left: 25px;
 	background: #dbe6f1;
 	border-radius: 27px;
+}
+
+.top__logo {
+	order:-3;
 }
 
 .top__logo[href]:hover span {
@@ -122,11 +126,17 @@ li {
 }
 
 .top__link.top__link--git {
-	margin-right: 5px;
+	order: -1;
+}
+
+.top__link.top__link--codepen {
+	margin-right: 20px;
+	margin-left: auto;
+	order: -2;
 }
 
 .top__link:hover svg {
-	fill: #161b22;
+	fill: #333e4e;
 }
 
 .info {
