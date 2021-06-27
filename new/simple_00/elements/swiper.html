@@ -125,10 +125,68 @@ disableOnInteraction: false
 <span class="coments">// Скорость</span>
 speed: 800,
 
+<span class="coments">// Брейк поинты (адаптив) ==></span>
+breakpoints: {
+  320: {
+    slidesPerView: 1,
+  },
+  480: {
+    slidesPerView: 2,
+  },
+  992: {
+    slidesPerView: 3,
+  }
+},
+<span class="coments">// - Соотношение сторон (высота деленая на ширину)</span>
+breakpoints: {
+  '@0.75': {
+    slidesPerView: 1,
+  },
+  '@1.00': {
+    slidesPerView: 2,
+  },
+  '@1.50': {
+    slidesPerView: 3,
+  }
+},
+
+
+<span class="coments">// Lazy Loading ==></span>
+<span class="coments">для самой картинки добавляем класс .swiper-lazy</span>
+<span class="coments">путь картинки переделываем на data-src="img/img.jpg"</span>
+<span class="coments">пишем src="img/1х1.png" (делаем однопиксельное изображение)</span>
+<span class="coments">сразу после картинки добавляем div.swiper-lazy-preloader (выводит анимационную иконку подгрузки)</span>
+
+<span class="coments"> // - Отключить предзагрузку картинок по ум. (отключаем полюбому)</span>
+preloadImages: false,
+lazy: {
+<span class="coments">// - Подгружаться начнется, когда мы начнем листать (true)</span>
+loadOnTransitionStart: true,
+<span class="coments">//  - Подгрузить предыдущую и следующую картинки сразу</span>
+loadPrevNext: true,
+},
+<span class="coments">// - Слежка за видимыми слайдами</span>
+watchSlidesProgress: true,
+<span class="coments">// - Добавление класса видимым слайдам</span>
+watchSlidesVisibility: true,
+
+
 <span class="coments">// Вертикальный слайдер (по ум. 'horizontal')</span>
 <span class="coments">// .my-slider {height: 400px;}</span>
 <span class="coments">// помним: свободный режим и возможность управления колесом мыши</span>
 direction: 'vertical', 
+
+
+
+<span class="coments">// Зум картинки(при двойном клике увеличчится и можно будет перетаскивать)</span>
+<span class="coments">// .swiper-slide > добавляем оболочке картинки .swiper-zoom-container</span>
+zoom: {
+  <span class="coments">// - Макимальное увеличение</span>
+  maxRatio: 5,
+  <span class="coments">// - Минимальное увеличение</span>
+  minRatio: 1,
+},
+
 
 <span class="coments">//=================================
 //=================================\/</span>
@@ -242,7 +300,6 @@ mousewheel: {
   <span class="coments">// - Если слайдеров несколько eventsTarget можно не писать</span>
   eventsTarget: '.my-slider'
 },
-
 
 });
 	</code></pre>
