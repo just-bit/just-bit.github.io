@@ -29,8 +29,7 @@
 
 		<p class="about-code__text">
 			Еслм слайдер находится внутри flex-элемента, то этому flex-элементу пишем min-width: 0;<br>
-			Если слайдер находится внутри изначально скрытого элемента (напр. табы) ------------<br>
-			Чтобы в "pagination" выводить несколько элементов навигации -----------------
+			Если на страницы несколько слайдеров - просто копируем струкруру с теми же классами<br>
 		</p>
 	</div>
 </div>
@@ -64,12 +63,16 @@
 		<div class="code">
 			<pre><code>
 let myImageSlider = new Swiper('.my-slider', {
+  <span class="coments">// ... options</span>
+});
+
 
 <span class="coments">// Стрелки ==></span>
 navigation: {
   nextEl: '.swiper-button-next',
   prevEl: '.swiper-button-prev'
   },
+
 
 <span class="coments">// Навигация ==></span>
 pagination: {
@@ -93,6 +96,7 @@ pagination: {
   type: 'progressbar'
 },
 
+
 <span class="coments">// Скролл ==></span>
 scrollbar: {
   el: '.swiper-scrollbar',
@@ -100,17 +104,25 @@ scrollbar: {
   draggable: true
 },
 
+
+<span class="coments">// если слайдер находится в изначально скрытом блоке (напр. табы)</span>
+observer: true,
+observeParents: true,
+observeSlideChildren: true,
+
+
 <span class="coments">// Свободный режим (скролл без фиксированной позиции, Управление колесом мыши - интересно работает)</span>
 freeMode: true,
+
 
 <span class="coments">// Бесконечный слайдер</span>
 <span class="coments">// Не работает с мультирядностью</span>
 <span class="coments">// если slidesPerView: 'auto', </span>
 <span class="coments">// добавляем вручную количество дублирующих слайдов (loopedSlides)</span>
 loop: true,
-
 <span class="coments">// Кол-во дублирующих слайдов</span>
 loopedSlides: 0,
+
 
 <span class="coments">// Автопрокрутка  ==></span>
 autoplay: {
@@ -122,8 +134,23 @@ stopOnLastSlide: true,
 disableOnInteraction: false
 },
 
+
+<span class="coments">// Запуск автопрокрутки при наведении </span>
+let sliderBlock = document.querySelector('.image-slider');
+<span class="coments">// myImageSlider - это переменная которой присвоен слайдер</span>
+sliderBlock.addEventListener("mouseenter", function (e) {
+myImageSlider.params.autoplay.disableOnInteraction = false;
+myImageSlider.params.autoplay.delay = 500;
+myImageSlider.autoplay.start();
+});
+sliderBlock.addEventListener("mouseleave", function (e) {
+myImageSlider.autoplay.stop();
+});
+
+
 <span class="coments">// Скорость</span>
 speed: 800,
+
 
 <span class="coments">// Брейк поинты (адаптив) ==></span>
 breakpoints: {
@@ -156,8 +183,7 @@ breakpoints: {
 <span class="coments">путь картинки переделываем на data-src="img/img.jpg"</span>
 <span class="coments">пишем src="img/1х1.png" (делаем однопиксельное изображение)</span>
 <span class="coments">сразу после картинки добавляем div.swiper-lazy-preloader (выводит анимационную иконку подгрузки)</span>
-
-<span class="coments"> // - Отключить предзагрузку картинок по ум. (отключаем полюбому)</span>
+<span class="coments">// - Отключить предзагрузку картинок по ум. (отключаем полюбому)</span>
 preloadImages: false,
 lazy: {
 <span class="coments">// - Подгружаться начнется, когда мы начнем листать (true)</span>
@@ -177,8 +203,7 @@ watchSlidesVisibility: true,
 direction: 'vertical', 
 
 
-
-<span class="coments">// Зум картинки(при двойном клике увеличчится и можно будет перетаскивать)</span>
+<span class="coments">// Зум картинки (при двойном клике увеличчится и можно будет перетаскивать)</span>
 <span class="coments">// .swiper-slide > добавляем оболочке картинки .swiper-zoom-container</span>
 zoom: {
   <span class="coments">// - Макимальное увеличение</span>
@@ -187,9 +212,6 @@ zoom: {
   minRatio: 1,
 },
 
-
-<span class="coments">//=================================
-//=================================\/</span>
 
 <span class="coments">// Эффекты переключения слайдов (выбрать один) ==></span>
 <span class="coments">// - Листание (по ум.)</span>
@@ -227,8 +249,6 @@ coverflowEffect: {
   slideShadows: true,
 },
 
-<span class="coments">//=================================^
-//=================================</span>
 
 <span class="coments">// Отступ между слайдами</span>
 spaceBetween: 30,
@@ -249,6 +269,21 @@ initialSlide: 0,
 <span class="coments">// если slidesPerView: 'auto' ==> .swiper-slide {width: auto;}</span>
 <span class="coments">// не работает, если больше чем один ряд</span>
 slidesPerView: 3,
+
+
+<span class="coments">// = слайдер с миниатюрами ==================</span>
+<span class="coments">// создаем еще один слайдер под главным с миниатюрами</span>
+<span class="coments">// количевство миниатюр равно количеству слайдов</span>
+<span class="coments">// настройки главного слайдера:</span>
+<span class="coments">// убираем скролл, фракции, ставим slidesPerView: 1</span>
+thumbs: {
+  swiper: {
+    <span class="coments">// класс нового слайдера и его насройки</span>
+    el: '.image-mini-slider',
+    slidesPerView: 5,
+  }
+},
+
 
 <span class="coments">// Мультирядность</span>
 <span class="coments">// autoHeight: false</span>
@@ -301,7 +336,39 @@ mousewheel: {
   eventsTarget: '.my-slider'
 },
 
-});
+<span class="coments">// = слайдер внутри слайдера ==================</span>
+<span class="coments">// внутрь слайда родительского слайдера вставляем новый слайдер</span>
+<span class="coments">// инициализируем новый слайдер (со своими настройками)</span>
+<span class="coments">// чтобы новый слайдер не влиял на родительский слайдер:</span>
+<span class="coments">// nested: true, - для нового слайдера</span>
+<span class="coments">// для родителя отключаем Переключение при клике на слайд (slideToClickedSlide: false)</span>
+
+
+<span class="coments">// = один слайдер разделен неким объектом, который не является частью этого слайдера ==================</span>
+<span class="coments">// делаем новый слайдер и инициализируем его (со своими настройками)</span>
+<span class="coments">// количество слайдов должно совпадать</span>
+<span class="coments">// обоим слайдерам присваиваим совои переменные(напр. s1, s2)</span>
+<span class="coments">// передаем управление друг другу</span>
+<span class="coments">// следующий код пишем за скобками слайдеров</span>
+s1.controller.controll = s2;
+s2.controller.controll = s1;
+
+
+<span class="coments">// Доступность</span>
+a11y: {
+  enabled: true,
+  prevSlideMessage: 'Previous slide',
+  nextSlideMessage: 'Next slide',
+  firstSlideMessage: 'This is the first slide',
+  lastSlideMessage: 'This is the last slide',
+  paginationBulletMessage: 'Go to slide {{index}}',
+  notificationClass: 'swiper-notification',
+  containerMessage: '',
+  containerRoleDescriptionMessage: '',
+  itemRoleDescriptionMessage: '',
+  <span class="coments"> // и т.д.</span>
+},
+
 	</code></pre>
 		</div>
 
