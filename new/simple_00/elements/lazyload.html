@@ -71,7 +71,7 @@
 			<pre><code>	
 <span class="class">.image</span> {
   <span class="html-tags">position: </span><span class="html-selector">relative</span><span class="html-tags">;</span>
-  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 90% 0px</span>;
+  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 90% 0px</span><span class="html-tags">;</span>
   <span class="html-tags">background: </span><span class="html-selector">url("</span>img/spinner.svg<span class="html-selector">") center / 50px no-repeat</span><span class="html-tags">;</span>
 }
 
@@ -86,7 +86,7 @@
 
 <span class="class">.map</span> {
   <span class="html-tags">position: </span><span class="html-selector">relative</span><span class="html-tags">;</span>
-  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 50% 0px</span>;
+  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 50% 0px</span><span class="html-tags">;</span>
   <span class="html-tags">background: </span><span class="html-selector">url("</span>img/spinner.svg<span
 		class="html-selector">") center / 50px no-repeat</span><span class="html-tags">;</span>
 }
@@ -103,7 +103,66 @@
 
 			<div class="code">
 				<pre><code>
--------------------------
+const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]');
+const windowHeight = document.documentElement.clientHeight;
+<span class="coments">// для карты</span>
+const loadMapBlock = document.querySelector('._load-map');
+
+let lazyImagesPositions = [];
+if (lazyImages.length > 0) {
+  lazyImages.forEach(img => {
+    if (img.dataset.src || img.dataset.srcset) {
+      lazyImagesPositions.push(img.getBoundingClientRect().top + pageYOffset);
+      lazyScrollCheck();
+    }
+    if (!loadMapBlock.classList.contains('_loaded')) {
+    getMap();
+  }
+  });
+}
+
+window.addEventListener("scroll", lazyScroll);
+
+function lazyScroll() {
+  if (document.querySelectorAll('img[data-src],source[data-srcset]').length > 0) {
+    lazyScrollCheck();
+  }
+  <span class="coments">// для карты</span>
+  if (!loadMapBlock.classList.contains('_loaded')) {
+    getMap();
+  }
+}
+
+function lazyScrollCheck() {
+  let imgIndex = lazyImagesPositions.findIndex(
+    item => pageYOffset > item - windowHeight
+  );
+  if (imgIndex >= 0) {
+    if (lazyImages[imgIndex].dataset.src) {
+      lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
+      lazyImages[imgIndex].removeAttribute('data-src');
+    } else if (lazyImages[imgIndex].dataset.srcset) {
+      lazyImages[imgIndex].srcset = lazyImages[imgIndex].dataset.srcset;
+      lazyImages[imgIndex].removeAttribute('data-srcset');
+    }
+    delete lazyImagesPositions[imgIndex];
+  }
+}
+
+<span class="coments">// для карты</span>
+function getMap() {
+  const loadMapBlockPos = loadMapBlock.getBoundingClientRect().top + pageYOffset;
+  if (pageYOffset > loadMapBlockPos - windowHeight) {
+    const loadMapUrl = loadMapBlock.dataset.map;
+    if (loadMapUrl) {
+      loadMapBlock.insertAdjacentHTML(
+        "beforeend",
+        `&lt;iframe src="${loadMapUrl}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
+      );
+      loadMapBlock.classList.add('_loaded');
+    }
+  }
+}
 				</code></pre>
 			</div>
 
