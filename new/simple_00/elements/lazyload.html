@@ -16,36 +16,96 @@
 					<use xlink:href="../img/sprite.svg#github"></use>
 				</svg></a>
 			<a class="top__logo" href="../index.html"><span>just-bit</span><span>something useful</span></a>
-			<a class="top__link top__link--codepen" href="https://codepen.io/pen" target="_blank"><svg width="35" height="35">
+			<a class="top__link top__link--codepen" href="https://codepen.io/pen" target="_blank">
+				<svg width="35" height="35">
 					<use xlink:href="../img/sprite.svg#codepen"></use>
-				</svg></a>
+				</svg>
+			</a>
 		</div>
 		<div class="box-top">
 			<h1 class="box-top__title">Lazy Load</h1>
-			<a class="box-top__demo" href="--------------" style="background-color: grey;" target="_blank">DEMO</a>
 		</div>
 
 		<div class="about-code">
 			<div class="about-code__item">
 				<div class="code">
-					<span class="class class--nbsp">------------</span>
+					<span class="class class--nbsp">
+						<a href="../img/1x1.gif" download>Скачать 1x1.gif</a>
+					</span>
 				</div>
-				<p class="about-code__text">
-					-----------------------------
-				</p>
+				<div class="code">
+					<span class="class class--nbsp">
+						<a href="../img/spinner.svg" download>Скачать spinner.svg</a>
+					</span>
+				</div>
+
 			</div>
 		</div>
 
 		<div class="code">
 			<pre><code>
-------------------------
+<span class="coments">data-src - основная картинка</span>
+<span class="coments">src      - картинка-заглушка</span>
+
+<span class="html-tags">&lt;div </span><span class="html-selector">class="</span><span class="class">image</span><span class="html-selector">"</span><span class="html-tags">&gt;</span>
+  <span class="html-tags">&lt;img </span><span class="html-selector">data-src="</span><span class="class">img/01.jpg</span><span class="html-selector">"</span> <span class="html-selector">src="</span><span class="class">img/1x1.gif</span><span class="html-selector">"</span> <span class="html-tags">alt="Картинка"&gt;</span>
+<span class="html-tags">&lt;/div&gt;</span>
+
+
+<span class="html-tags">&lt;div </span><span class="html-selector">class="</span><span class="class">image</span><span
+	class="html-selector">"</span><span class="html-tags">&gt;</span>
+  <span class="html-tags">&lt;picture&gt;</span><source data-srcset="img/03.webp" srcset="img/1x1.gif" type="image/webp">
+    <span class="html-tags">&lt;source </span><span class="html-selector">data-srcset="</span><span class="class">img/01.webp</span><span class="html-selector">" </span><span class="html-selector">srcset="</span><span class="class">img/1x1.gif</span><span class="html-selector">" </span><span class="html-tags">type="image/webp"&gt;</span>
+    <span class="html-tags">&lt;img </span><span class="html-selector">data-src="</span><span
+		class="class">img/01.jpg</span><span class="html-selector">"</span> <span class="html-selector">src="</span><span
+		class="class">img/1x1.gif</span><span class="html-selector">"</span> <span class="html-tags">alt="Картинка"&gt;</span>
+  <span class="html-tags">&lt;/picture&gt;</span>
+<span class="html-tags">&lt;/div&gt;</span>
+
+
+<span class="html-tags">&lt;div </span><span class="html-selector">class="</span><span class="class">map _load-map</span><span class="html-selector">" </span><span class="html-selector">data-map="</span>https://www.google.com/maps/embed?pb=!1m18!1m1 ...<span class="html-selector">"</span><span class="html-tags">&gt;</span>
+<span class="html-tags">&lt;/div&gt;</span>
 	</code></pre>
 		</div>
 		<div class="code">
-			<pre><code>
--------------------------
+			<pre><code>	
+<span class="class">.image</span> {
+  <span class="html-tags">position: </span><span class="html-selector">relative</span><span class="html-tags">;</span>
+  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 90% 0px</span>;
+  <span class="html-tags">background: </span><span class="html-selector">url("</span>img/spinner.svg<span class="html-selector">") center / 50px no-repeat</span><span class="html-tags">;</span>
+}
+
+<span class="class">.image img</span> {
+  <span class="html-tags">position: </span><span class="html-selector">absolute</span><span class="html-tags">;</span>
+  <span class="html-tags">top: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">left: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">width: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+  <span class="html-tags">height: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+  <span class="html-tags">object-fit: </span><span class="html-selector">cover</span><span class="html-tags">;</span>
+}
+
+<span class="class">.map</span> {
+  <span class="html-tags">position: </span><span class="html-selector">relative</span><span class="html-tags">;</span>
+  <span class="html-tags">padding: </span><span class="html-selector">0px 0px 50% 0px</span>;
+  <span class="html-tags">background: </span><span class="html-selector">url("</span>img/spinner.svg<span
+		class="html-selector">") center / 50px no-repeat</span><span class="html-tags">;</span>
+}
+
+<span class="class">.map iframe </span>{
+  <span class="html-tags">position: </span><span class="html-selector">absolute</span><span class="html-tags">;</span>
+  <span class="html-tags">top: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">left: </span><span class="html-selector">0</span><span class="html-tags">;</span>
+  <span class="html-tags">width: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+  <span class="html-tags">height: </span><span class="html-selector">100%</span><span class="html-tags">;</span>
+}
 	</code></pre>
 		</div>
+
+			<div class="code">
+				<pre><code>
+-------------------------
+				</code></pre>
+			</div>
 
 	</div>
 	<script src="js/script.js"></script>
