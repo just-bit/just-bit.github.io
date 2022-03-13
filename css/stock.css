@@ -172,3 +172,13 @@ li:hover .content-link {
 	border-bottom: 1px solid #fff;
 	color: #fff;
 }
+
+.bodules {
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid red;
+}
+
+.block {
+	border: 1px solid red;
+}
