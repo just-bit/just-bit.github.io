@@ -18,9 +18,8 @@ a {
 .header {
 	margin-top: 30px;
 	margin-bottom: 30px;
-	border-top: 1px solid #e5e5e5;
-	border-bottom: 1px solid #e5e5e5;
-	background-color: rgb(177, 165, 230);
+
+background-color: #221b3b;
 }
 
 .header ul {
@@ -56,7 +55,7 @@ a {
 }
 
 .header a:hover {
-	background-color: #e61c38;
+	background-color: #b1a5e6;
 }
 
 .wrapper {
@@ -121,7 +120,7 @@ a {
 	z-index: 10;
 	box-shadow: 3px 3px 20px rgba(229, 229, 229, 0.9);
 	border-radius: 10px;
-	background-color: #e61c38;
+	background-color: #b1a5e6;
 }
 .wrapper li:hover:before,
 .wrapper li:focus:before {
@@ -218,47 +217,10 @@ a {
 	color: #fff;
 }
 
-/* modules */
-
-.modules {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	padding: 30px 20px;
-	padding-top: 0;
-}
-
-.block {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 3px;
-	border: 1px solid #b1a5e6;
-}
-
-.block span {
-	padding: 5px 10px;
-	background-color: #b1a5e6;
-	color: #ffffff;
-	font-weight: 700;
-}
-
-.block a {
-	padding: 5px;
-	width: 100%;
-	text-decoration: none;
-	text-align: center;
-}
-
-.block a:hover {
-	background-color: #f5f5f5;
-}
-
 /* manual */
 
 .manual {
+	margin-bottom: 15px;
 	padding: 20px;
 	padding-top: 0;
 }
@@ -269,24 +231,54 @@ a {
 	border-bottom: 1px solid rgb(231, 38, 38);
 }
 
-.manual > ul > li span{
+.submenu a {
+	display: block;
+	border-bottom: 1px solid rgba(177, 165, 230, 0.3);
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 40px;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.submenu a:hover {
+	background-color: rgb(177, 165, 230);
+	color: #fff;
+}
+
+li.has-child > span {
+	padding: 10px !important;
+	padding-left: 20px !important;
+	padding-right: 40px !important;
+		border-bottom: 1px solid rgba(177, 165, 230, 0.3);
+}
+
+.manual ul li > span {
 display: block;
 padding: 15px 23px;
 cursor: pointer;
 transition: background-color 0.2s, color 0.2s;
+cursor: default;
+	white-space: nowrap;
 }
 
-
-.manual>ul>li:hover span {
+.manual ul li:hover > span {
 	background-color: rgb(231, 38, 38);
 	color: #fff;
+
 }
 
-.manual>ul>li.has-child {
+.submenu ul li:last-child a,
+.submenu ul li:last-child span{
+	border-bottom: none;
+}
+
+.manual ul > li.has-child {
 	position: relative;
 }
-.manual>ul>li.has-child >.submenu {
+.manual ul > li.has-child > .submenu {
 	position: absolute;
+	z-index: 100;
 	top: 100%;
 	z-index: 10;
 	opacity: 0;
@@ -295,7 +287,7 @@ transition: background-color 0.2s, color 0.2s;
 	transition: visibility 0.2s, transform 0.2s, opacity 0.2s;
 }
 
-.manual>ul>li.has-child>.submenu ul {
+.manual ul > li.has-child > .submenu > ul {
 	margin-top: 5px;
 padding-top: 5px;
 padding-bottom: 5px;
@@ -303,29 +295,23 @@ background: #fff;
 box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.manual>ul>li.has-child:hover > .submenu {
+.manual ul > li.has-child:hover > .submenu {
 	visibility: visible;
 	opacity: 1;
 	transform: translateY(0);
 }
 
-.submenu a{
-	display: block;
-	border-bottom: 1px solid rgba(177, 165, 230, 0.3);
-	padding:10px;
-	padding-left: 20px;
-	padding-right: 40px;
-	text-decoration: none;
-	white-space: nowrap;
+.has-child li.has-child {
+	position: relative;
 }
 
-.submenu > ul > li:last-child a {
-	border-bottom: none;}
-
-.submenu a:hover {
-	background-color: rgb(177, 165, 230);
-	color: #fff;
+.has-child li.has-child > .submenu {
+	position: absolute;
+	top: -4px !important;
+	left: 100%;
+	padding-left: 5px;
 }
+
 
 
 
