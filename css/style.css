@@ -6,6 +6,10 @@
 	font-family: sans-serif;
 }
 
+body {
+	min-width: 320px;
+}
+
 p {
 	margin: 0;
 }
@@ -322,6 +326,9 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .pc-wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
 	padding: 20px;
 	padding-top: 0;
 }
@@ -331,12 +338,18 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 	gap: 5px;
 }
 
+.pc-wrapper ul li {
+	flex-grow: 1;
+	min-width: 10%;
+}
+
 .pc-wrapper a {
 	display: block;
 	padding: 15px;
 	border: 1px solid #1a0dab;
 	font-weight: 700;
 	text-decoration: none;
+	text-align: center;
 }
 
 .pc-wrapper a:hover {
