@@ -346,12 +346,14 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 .pc-wrapper a {
 	display: block;
 	padding: 15px;
-	border: 1px solid #1a0dab;
+	border: 1px solid #221b3b;
 	font-weight: 700;
 	text-decoration: none;
 	text-align: center;
+	color: #221b3b;
 }
 
 .pc-wrapper a:hover {
-	color: #1a0dab;
+	background-color: #221b3b;
+	color: #fff;
 }
