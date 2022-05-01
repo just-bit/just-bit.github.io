@@ -6,6 +6,11 @@
 	font-family: sans-serif;
 }
 
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
 body {
 	min-width: 320px;
 	overflow-x: hidden;
@@ -60,30 +65,42 @@ a {
 }
 }
 
-
 .header {
-	display: flex;
-justify-content: space-between;
-align-items: center;
-height: 40px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	background-color: #221b3b;
+		background-color: #221b3b;
+		margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 @media (max-width: 991px) {
 	.header {
-		position: fixed;
-		z-index: 100;
-		top: 0;
-		right: 0;
-		left: 0;
 		margin-top: 0;
 		margin-bottom: 20px;
 	}
 }
 
-.header ul {
+
+.header-inner {
+	display: flex;
+justify-content: space-between;
+align-items: center;
+		max-width: 1400px;
+		margin: 0 auto;
+height: 40px;
+	
+}
+
+@media (max-width: 991px) {
+	.header-inner {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		right: 0;
+		left: 0;
+			background-color: #221b3b;
+	}
+}
+
+.header-inner ul {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -92,16 +109,16 @@ height: 100%;
 	padding: 0 15px;
 }
 
-.header li {
+.header-inner li {
 	height: 100%;
 }
 
-.header li.current a {
+.header-inner li.current a {
 	background-color: #e61c38;
 	pointer-events: none;
 }
 
-.header a {
+.header-inner a {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -114,7 +131,7 @@ height: 100%;
 	cursor: pointer;
 }
 
-.header a:hover {
+.header-inner a:hover {
 	background-color: #b1a5e6;
 }
 
@@ -489,9 +506,9 @@ padding-left: 15px;
 /* manual */
 
 .manual {
-	margin-bottom: 15px;
-	padding: 20px;
-	padding-top: 0;
+	margin-bottom: 50px;
+	padding-top: 0;border-top: 1px solid rgb(231, 38, 38);
+	border-bottom: 1px solid rgb(231, 38, 38);
 }
 
 @media (max-width: 991px) {
@@ -502,8 +519,7 @@ padding-left: 15px;
 
 .manual > ul {
 	display: flex;
-	border-top: 1px solid rgb(231, 38, 38);
-	border-bottom: 1px solid rgb(231, 38, 38);
+	padding-left: 10px;
 }
 
 .submenu a {
@@ -597,7 +613,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .pc-wrapper {
-	max-width: 1170px;
+	max-width: 1400px;
 	margin: 0 auto;
 	padding: 0 15px;
 	padding: 20px;
