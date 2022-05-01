@@ -2,11 +2,6 @@ $(document).ready(function () {
 	var touch = $(".mobile-btn");
 	var toggles = document.querySelectorAll(".mobile-menu");
 
-	for (var i = toggles.length - 1; i >= 0; i--) {
-		var toggle = toggles[i];
-		toggleHandler(toggle);
-	}
-
 	function toggleHandler(toggle) {
 		toggle.addEventListener("click", function (e) {
 			e.preventDefault();
@@ -24,12 +19,6 @@ $(document).ready(function () {
 		e.preventDefault();
 		$("body").toggleClass("menu-opened");
 		return false;
-	});
-	$(document).on("click", ".mobile-btn", function (e) {
-		e.stopPropagation();
-	});
-	$(document).on("click", ".mobile-menu", function (e) {
-		e.stopPropagation();
 	});
 
 	$(".acc-body").css("display", "none");

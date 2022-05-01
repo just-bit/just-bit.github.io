@@ -221,7 +221,7 @@ height: 40px;
 .mobile-menu::-webkit-scrollbar {
 	overflow-y: scroll;
 	background: transparent;
-	width: 5px;
+	width: 2px;
 	transition: linear .2s;
 	box-shadow: 3px 0 0 #221b3b;
 }
@@ -239,6 +239,11 @@ height: 40px;
 	cursor: pointer;
 }
 
+.mobile-menu .acc-head.active {
+	background-color: #221b3b;
+	color: #ffffff;
+}
+
 .mobile-menu .acc-head > span {
 	display: block;
 border-bottom: 2px solid #000;
@@ -246,8 +251,18 @@ border-bottom: 2px solid #000;
 padding-left: 15px;
 }
 
-.mobile-menu .acc-head.active > span {
+.mobile-menu .acc-head + .acc-body a {
+		background-color: #b1a5e6;
+		color: #ffffff;
+}
 
+.mobile-menu .acc-head+.acc-body a:hover {
+	background-color: #7568b1;
+	color: #ffffff;
+}
+
+.mobile-menu .acc-body {
+	padding-top: 5px;
 }
 
 .wrapper {
