@@ -12,7 +12,7 @@ $(document).ready(function () {
 	}
 
 	touch.on("click", function (e) {
-		touch.toggleClass('active');
+		touch.toggleClass('open');
 	});
 
 	$(touch).click(function (e) {
