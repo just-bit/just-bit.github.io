@@ -615,6 +615,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 .pc-wrapper {
 	max-width: 1400px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 	padding: 0 15px;
 	padding: 20px;
 	padding-top: 0;
@@ -643,4 +644,20 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 .pc-wrapper a:hover {
 	background-color: #221b3b;
 	color: #fff;
+}
+
+.pc-article {
+margin-bottom: 20px;
+}
+
+.pc-article a{
+	display: block;
+	margin-bottom: 20px;
+	color: rgb(3, 1, 7);
+	text-decoration: none;
+}
+
+.pc-article a:hover {
+	color: rgb(51, 39, 73);
+	text-decoration: underline;
 }
