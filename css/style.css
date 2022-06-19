@@ -136,7 +136,7 @@ height: 100%;
 	background-color: #b1a5e6;
 }
 
-/* ========== */
+/* ==== mobile-btn ====== */
 
 .mobile-btn {
 	display: none;
@@ -607,7 +607,7 @@ box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 
 
 
-/* pc */
+/* =========== pc ========= */
 
 .pc {
 	background: rgba(178, 180, 211, 0.404);
@@ -671,7 +671,7 @@ margin-bottom: 20px;
 
 .pc-article a{
 	display: block;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	color: rgb(3, 1, 7);
 	text-decoration: none;
 }
@@ -681,7 +681,7 @@ margin-bottom: 20px;
 	text-decoration: underline;
 }
 
-/* ========= */
+/* ==== new ===== */
 
 .new {
 	margin-bottom: 200px;
@@ -850,4 +850,42 @@ background-color: #b1a5e6;
 	color: #fff;
 	font-weight: 500;
 }
+
+/* ========= qu =========== */
+
+.qu {
+	margin-bottom: 20px;
+}
+
+.qu ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 30px;
+	padding: 0 15px;
+}
+
+.qu ul li a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.qu ul li a svg{
+	height: 40px;
+}
+
+.qu ul li a img {
+
+			width: 100%;
+			height: 40px;
+			object-fit: cover;
+
+}
+
+.qu ul li a svg path{
+	fill: #1d1e22;
+}
+
+
 
