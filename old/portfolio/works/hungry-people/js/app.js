@@ -67,7 +67,7 @@ if (iconMenu != null) {
 			menuBody.classList.toggle("_active");
 		}
 	});
-};
+}
 function menu_close() {
 	let iconMenu = document.querySelector(".icon-menu");
 	let menuBody = document.querySelector(".menu__body");
@@ -582,7 +582,7 @@ function menuClose() {
 			icon.classList.toggle('button-burger__icon--active');
 			body.classList.toggle('_lock');
 		})
-	};
+	}
 }
 
 
@@ -689,7 +689,7 @@ function scrollMenuActive() {
 				block: "start"
 			})
 		})
-	};
+	}
 
 	// active class of menu items onscroll
 	window.addEventListener('scroll', () => {

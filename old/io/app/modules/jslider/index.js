@@ -915,7 +915,7 @@ module.exports = function() {
         $this.o.pointers[i] = new jSliderPointer(this, i, $this);
 
         var prev = $this.settings.value.split(';')[i - 1];
-        if (prev && new Number(value) < new Number(prev)) value = prev;
+        if (prev && Number(value) < Number(prev)) value = prev;
 
         value = value < $this.settings.from ? $this.settings.from : value;
         value = value > $this.settings.to ? $this.settings.to : value;
@@ -1190,8 +1190,8 @@ module.exports = function() {
         if (h[i]) var v = h[i].split('/');
         else       var v = [100, this.settings.to];
 
-        v[0] = new Number(v[0]);
-        v[1] = new Number(v[1]);
+        v[0] = Number(v[0]);
+        v[1] = Number(v[1]);
 
         if (prc >= _start && prc <= v[0]) {
           var value = _from + ( (prc - _start) * (v[1] - _from) ) / (v[0] - _start);
@@ -1217,8 +1217,8 @@ module.exports = function() {
       for (var i = 0; i <= h.length; i++) {
         if (h[i]) var v = h[i].split('/');
         else     var v = [100, this.settings.to];
-        v[0] = new Number(v[0]);
-        v[1] = new Number(v[1]);
+        v[0] = Number(v[0]);
+        v[1] = Number(v[1]);
 
         if (value >= _from && value <= v[1]) {
           var prc = pointer.limits(_start + (value - _from) * (v[0] - _start) / (v[1] - _from));
@@ -1245,11 +1245,11 @@ module.exports = function() {
     value = value.toString().replace(/,/gi, '.').replace(/ /gi, '');
 
     if ($.formatNumber) {
-      return $.formatNumber(new Number(value), this.settings.format || {}).replace(/-/gi, '&minus;');
+      return $.formatNumber(Number(value), this.settings.format || {}).replace(/-/gi, '&minus;');
     }
 
     else {
-      return new Number(value);
+      return Number(value);
     }
   };
 
@@ -1398,9 +1398,9 @@ module.exports = function() {
       // get text
       var text;
       if (jQuery(this).is(':input'))
-        text = new String(jQuery(this).val());
+        text = String(jQuery(this).val());
       else
-        text = new String(jQuery(this).text());
+        text = String(jQuery(this).text());
 
       // format
       var returnString = jQuery.formatNumber(text, options);
@@ -1448,7 +1448,7 @@ module.exports = function() {
       else
       if (i == 0 && options.format.charAt(i) == '-') {
         negativeInFront = true;
-        continue;
+
       }
       else
         break;
@@ -1468,7 +1468,7 @@ module.exports = function() {
     // while (numberString.indexOf(group) > -1)
     //	numberString = numberString.replace(group, '');
     // var number = new Number(numberString.replace(dec, ".").replace(neg, "-"));
-    var number = new Number(numberString);
+    var number = Number(numberString);
 
     return jQuery._formatNumber(number, options, suffix, prefix, negativeInFront);
   };
@@ -1507,26 +1507,26 @@ module.exports = function() {
 
       // round or truncate number as needed
       if (options.round == true)
-        number = new Number(number.toFixed(decimalFormat.length));
+        number = Number(number.toFixed(decimalFormat.length));
       else {
         var numStr = number.toString();
         numStr = numStr.substring(0, numStr.lastIndexOf('.') + decimalFormat.length + 1);
-        number = new Number(numStr);
+        number = Number(numStr);
       }
 
       var decimalValue = number % 1;
-      var decimalString = new String(decimalValue.toFixed(decimalFormat.length));
+      var decimalString = String(decimalValue.toFixed(decimalFormat.length));
       decimalString = decimalString.substring(decimalString.lastIndexOf('.') + 1);
 
       for (var i = 0; i < decimalFormat.length; i++) {
         if (decimalFormat.charAt(i) == '#' && decimalString.charAt(i) != '0') {
           decimalPortion += decimalString.charAt(i);
-          continue;
+
         } else if (decimalFormat.charAt(i) == '#' && decimalString.charAt(i) == '0') {
           var notParsed = decimalString.substring(i);
           if (notParsed.match('[1-9]')) {
             decimalPortion += decimalString.charAt(i);
-            continue;
+
           } else
             break;
         } else if (decimalFormat.charAt(i) == '0')
@@ -1549,7 +1549,7 @@ module.exports = function() {
     var onePortion = '';
     if (!(ones == 0 && onesFormat.substr(onesFormat.length - 1) == '#') || forcedToZero) {
       // find how many digits are in the group
-      var oneText = new String(Math.abs(ones));
+      var oneText = String(Math.abs(ones));
       var groupLength = 9999;
       if (onesFormat.lastIndexOf(',') != -1)
         groupLength = onesFormat.length - onesFormat.lastIndexOf(',') - 1;
@@ -1621,9 +1621,9 @@ module.exports = function() {
     // get text
     var text;
     if (jQuery(this).is(':input'))
-      text = new String(jQuery(this).val());
+      text = String(jQuery(this).val());
     else
-      text = new String(jQuery(this).text());
+      text = String(jQuery(this).text());
 
     // parse text
     var number = jQuery.parseNumber(text, options);
@@ -1668,7 +1668,7 @@ module.exports = function() {
       if (valid.indexOf(numberString.charAt(i)) > -1)
         validText = validText + numberString.charAt(i);
     }
-    var number = new Number(validText);
+    var number = Number(validText);
     if (hasPercent) {
       number = number / 100;
       var decimalPos = validText.indexOf('.');
